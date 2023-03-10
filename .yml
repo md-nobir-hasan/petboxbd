@@ -1,0 +1,2 @@
+- name: SSH Server Deploy
+  uses: kostyaten/ssh-server-deploy@v4
