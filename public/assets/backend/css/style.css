@@ -1,0 +1,17 @@
+.upload-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("/images/default/not-human-good.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+img.secreen-logo {
+    max-width: 90px !important;
+    max-height: 90px !important;
+}
+
+table tr th,
+table tr td {
+    vertical-align: middle !important;
+}

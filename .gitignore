@@ -1,0 +1,16 @@
+.env.backup
+.phpunit.result.cache
+docker-compose.override.yml
+Homestead.json
+Homestead.yaml
+/.vscode
+.env
+/public/brand
+/public/banner
+/public/card
+/public/company_details
+/public/cat
+/public/product
+public/slider
+public/subcat
+/.env
