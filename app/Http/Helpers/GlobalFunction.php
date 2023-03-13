@@ -43,44 +43,7 @@ function en2bn($bn_number){
         $check = Permission::where('role_id',$role_id)
                             ->where('feature_id', $feature_id->id)->first();
         if($check){
-            //  if($permission2){
-            //      $check2 = Permission::where('role_id',$role_id)
-            //                  ->where('permission',$permission2)->first();
-
-            //      if($check2){
-            //          // dd($check);
-            //          if($permission3){
-            //              $check3 = Permission::where('role_id',$role_id)
-            //                      ->where('permission',$permission3)->first();
-
-            //              if($check3){
-            //                  if($permission4){
-            //                      $check4 = Permission::where('role_id',$role_id)
-            //                              ->where('permission',$permission4)->first();
-            //                      if($check4){
-            //                          return true;
-            //                      }else{
-            //                          return false;
-            //                      }
-            //                  }
-            //                 else{
-            //                  return true;
-            //                 }
-            //              }else{
-            //                  return false;
-            //              }
-            //          }
-            //         else{
-            //          return true;
-            //         }
-            //      }else{
-            //          // dd('return false');
-            //          return false;
-            //      }
-            //  }
-            // else{
-            //  return true;
-            // }
+            
             return $check;
         }else{
             return false;

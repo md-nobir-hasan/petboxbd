@@ -18,7 +18,7 @@ class CompanyInfoSeeder extends Seeder
             ['name' => 'PETBOX', 'title' => 'PETBOX', 'logo' => 'seeder/logo.webp', 'address' => 'Dhaka'],
         ];
         $n2 = [
-            ['phone' => '01675571016', 'whatsapp' => '01675571016', 'facebook_group_link' => '', 'email' => 'petboxbd@gmail.com'],
+            ['phone' => '01675571016', 'whatsapp' => '01675571016', 'facebook_group_link' => '', 'email' => 'info@petboxbd.com'],
         ];
 
         DB::table('company_infos')->insert($n);
