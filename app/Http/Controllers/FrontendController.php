@@ -61,6 +61,7 @@ class FrontendController extends Controller
             $n['banners1'] = DB::table('banners')->orderBy('id', 'ASC')->limit('2')->get();
             $n['banners2'] = DB::table('banners')->orderBy('id', 'DESC')->limit('2')->get();
 
+            $n['products_default'] = Product::orderBy('id', 'DESC')->limit('6')->get();
 
            if(serviceCheck('No Product Type')){
             $n['products'] = Product::orderBy('id', 'DESC')->limit('6')->get();

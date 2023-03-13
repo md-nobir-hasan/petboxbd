@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>{{ $site_info->title ?? 'E-WEB - MD NOBIR HASAN' }} </title>
     <base />
-    <meta name="description" content="ebusiness" />
+    <meta name="description" content="petboxbd" />
     <meta name="keywords" content=" " />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link href="{{--{{ $site_info->logo }}--}}" rel="icon" />

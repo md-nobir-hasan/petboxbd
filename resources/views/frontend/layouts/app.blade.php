@@ -28,7 +28,7 @@
 
 
     <!-- Side Navbar Start -->
-    {{-- @include('frontend.partials.side-menue') --}}
+    @include('frontend.partials.side-menu')
     <!-- Navbar End -->
 
     {{-- Shopping card  --}}

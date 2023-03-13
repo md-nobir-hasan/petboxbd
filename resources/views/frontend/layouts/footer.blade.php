@@ -1,131 +1,122 @@
-{{--<footer class="footer">
-    <footer class="wrapper-container">
-        <div class="footer-content d-flex flex-wrap">
-            <div class="footer-widget">
-                <h4 class="title">Customer Care</h4>
-                <ul>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Shipping &amp; Delivery</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                </ul>
-            </div>
-            <div class="footer-widget">
-                <h4 class="title">Company Information</h4>
-                <ul>
-                    <li><a href="#">Refund and Return Policy</a></li>
-                    <li><a href="#">Terms and Conditions</a></li>
-                    <li><a href="#">Cashback Terms & Conditions</a></li>
-                </ul>
-            </div>
-            <div class="copy-right">
-                <p class="m-0">
-                    <span class="d-block d-md-inline">All Rights Reserved
-                        <strong>--}}{{--{{ ucfirst($site_info->name) }}--}}{{--</strong></span>
-                    <span class="d-none d-md-inline"> | </span>
-                    <span class="d-block d-md-inline">Designed & developed by <strong>Security First</strong></span>
-                    <span class="d-none d-md-inline"> | </span>
-                    <span class="d-block d-md-inline">Powdered by <strong>e-Business Clinic</strong></span>
-                </p>
-            </div>
-        </div>
-        </div>
-    </footer>
-</footer>--}}
 
-<footer class="footer container-fluid mt-0">
-    <div class="container-fluid">
-        <div class="pb-4">
 
-            <div class="d-grid gap-2 py-3 mb-3">
-                <button class="btn rounded-0 py-2 text-center footer_button" type="button"><h5 class="m-0"><i class="fa-solid fa-list"></i> TRUSTWORTHY SHOPPING EXPERIENCE</h5></button>
-            </div>
+<footer class="page-footer" style="margin-top: 100px;">
+    <div class="footer-style-1">
 
-            <div class="row row-cols-2 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 g-3 mb-3">
-                <div class="col d-flex align-items-stretch">
-                    <div class="card footer_card" >
-                        <div class="card-body text-center align-items-center d-flex flex-column">
-                            <img src="footer-image/delivery-icon.png" alt="" style="width: 50px;">
-                            <h4 class="card-title mt-3"><strong>Fastest Delivery</strong></h4>
-                            <p class="card-text">We providing Same Day (8 Hours) & Next Day Delivery Service besides regular delivery.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col d-flex align-items-stretch">
-                    <div class="card footer_card" >
-                        <div class="card-body text-center align-items-center d-flex flex-column">
-                            <img src="footer-image/customer-support-icon.png" alt="" style="width: 50px;">
-                            <h4 class="card-title mt-3"><strong>24/7 Customer Support</strong></h4>
-                            <p class="card-text">We Provide 24/7 friendly customer service.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col d-flex align-items-stretch">
-                    <div class="card footer_card" >
-                        <div class="card-body text-center align-items-center d-flex flex-column">
-                            <img src="footer-image/premium-quality-icon.png" alt="" style="width: 50px;">
-                            <h4 class="card-title mt-3"><strong>Premium Quality</strong></h4>
-                            <p class="card-text">We Never Compromise with quality. 100% Deshi handloom saree</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col d-flex align-items-stretch">
-                    <div class="card footer_card" >
-                        <div class="card-body text-center align-items-center d-flex flex-column">
-                            <img src="footer-image/Easy-Return.png" alt="" style="width: 50px;">
-                            <h4 class="card-title mt-3"><strong>Easy Return</strong></h4>
-                            <p class="card-text">Sharez Provide hassle free friendly return service.</p>
+        <div class="footer-top">
+            <div class="wrapper-container">
+                <div class="row justify-content-end align-items-center">
+                    <div class="subcribe-footer-content col-lg-8">
+                        <div class="subcribe-footer-title">Subscribe Our Newsletter</div>
+                        <div class="block-subscribe-footer">
+                            <form class="form subscribe" novalidate="novalidate" action="" method="post" id="newsletter-footer-validate-detail">
+
+                                <div class="newsletter-content">
+                                    <div class="input-group btn_input">
+                                        <input type="email" name="email" class="form-control" placeholder="Your email address" aria-label="Username" aria-describedby="basic-addon1">
+                                        <button class="input-group-text" id="basic-addon1">Subscribe</button>
+                                    </div>
+                                </div>
+
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="footer_text" style="background-color: #f6f9ff">
-            <hr class="mt-0" style="color: #a7a7a7;">
-            <div class="row pt-4 mx-2">
-                <div class="col-lg-3 col-md-6 col-sm-6 ">
-                    <h5 class="title " style="color: #2c3e50;">CONTACT US</h5>
-                    <ul>
-                        <li>
-                            <i class="fa fa-location" style="color: #0d21a1 !important;"></i><a class="text-secondary fs" href="javascript:void(0)"> <small> {{ $site_info->address }}</small></a></li>
-                        <li>
-                        <li>
-                            <i class="fa fa-phone" style="color: #0d21a1 !important;"></i><a class="text-secondary fs" href="tel:{{ $site_contact_info->phone }}"> <small> {{ $site_contact_info->phone }}</small></a></li>
-                        <li>
-                            <i class="fa fa-envelope" style="color: #0d21a1 !important;"></i><a class="text-secondary fs" href="mailto:{{ $site_contact_info->email }}"> <small> {{ $site_contact_info->email }}</small></a>
-                        </li>
-                    </ul>
+        <div class="footer-middle">
+            <div class="wrapper-container">
+                <div class="row justify-content-end">
+                    <div class="col-lg-8">
+                        <div class="row">
+                            <div class="col-md-3 col-sm-6">
+                                <div class="block-footer">
+                                    <div class="block-footer-title">Account</div>
+                                    <div class="block-footer-content">
+                                        <ul>
+                                            <li><a href="#">Policy</a></li>
+                                            <li><a href="#">System Program</a></li>
+                                            <li><a href="#">Return</a></li>
+                                            <li><a href="#">Site Map</a></li>
+                                            <li><a href="#">Healthy</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6">
+                                <div class="block-footer">
+                                    <div class="block-footer-title">Information</div>
+                                    <div class="block-footer-content">
+                                        <ul>
+                                            <li><a href="#">Contact Us</a></li>
+                                            <li><a href="#">Shipping &amp; Return</a></li>
+                                            <li><a href="#">Customer FAQ</a></li>
+                                            <li><a href="#">Care Tips</a></li>
+                                            <li><a href="#">Size Charts</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="block-footer">
+                                    <div class="logo-ft"><a href="#"><img src="{{ $site_info->logo }}" alt=""></a></div>
+                                    <div class="block-footer-content footer-contact">
+                                        <ul>
+                                            <li class="address">Location: {{ $site_info->address }}</li>
+                                            <li class="email">Email: {{ $site_contact_info->email }}</li>
+                                        </ul>
+                                    </div>
+                                    {{--<div class="social-footer">
+                                        <ul>
+                                            <li><a title="Facebook" href="https://www.facebook.com/MagenTech"><img src="http://magento2.magentech.com/themes/sm_petshop/pub/media/wysiwyg/footer/icon-facebook.png" alt=""></a></li>
+                                            <li><a title="Twitter" href="https://twitter.com/MagenTech"><img src="http://magento2.magentech.com/themes/sm_petshop/pub/media/wysiwyg/footer/icon-twitter.png" alt=""></a></li>
+                                            <li><a title="Instagram" href="#"> <img src="http://magento2.magentech.com/themes/sm_petshop/pub/media/wysiwyg/footer/icon-instagram.png" alt=""> </a></li>
+                                            <li><a title="Youtube" href="https://www.youtube.com/user/smartaddons"> <img src="http://magento2.magentech.com/themes/sm_petshop/pub/media/wysiwyg/footer/icon-youtube.png" alt=""></a></li>
+                                        </ul>
+                                    </div>--}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 mt-3 mt-sm-0 mt-md-0 mt-lg-0">
-                    <h5 class="title " style="color: #2c3e50;">COMPANY INFORMATION</h5>
-                    <ul class="">
-                        <li><a class="text-secondary" href="javascript:void(0)"><small>Refund and Return Policy</small></a></li>
-                        <li><a class="text-secondary" href="javascript:void(0)"><small>Terms and Conditions</small></a></li>
-                        <li><a class="text-secondary" href="javascript:void(0)"><small>Cashback Terms &amp; Conditions</small></a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 mt-3 mt-lg-0">
-                    <h5 class="title " style="color: #2c3e50;">CUSTOMER CARE</h5>
-                    <ul class="">
-                        <li><a class="text-secondary" href="javascript:void(0)"><small>Contact Us</small></a></li>
-                        <li><a class="text-secondary" href="javascript:void(0)"><small>About Us</small></a></li>
-                        <li><a class="text-secondary" href="javascript:void(0)"><small>Shipping &amp; Delivery</small></a></li>
-                        <li><a class="text-secondary" href="javascript:void(0)"><small>Privacy Policy</small></a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 mt-3 mt-lg-0">
-                    <h5 class="title text-light" style="color: #2c3e50 !important;">QUICK LINKS</h5>
-                    <ul class="">
-                        <li><a class="text-secondary" href="javascript:void(0)"><small>Refund and Return Policy</small></a></li>
-                        <li><a class="text-secondary" href="javascript:void(0)"><small>Terms and Conditions</small></a></li>
-                        <li><a class="text-secondary" href="javascript:void(0)"><small>Cashback Terms &amp; Conditions</small></a>
-                        <li><a class="text-secondary" href="javascript:void(0)"><small>Cashback Terms &amp; Conditions</small></a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="copy-right">
-                    <p class="m-0 py-2"><small style="color: #6c7793;">All Rights Reserved</small><a href="{{ url('/') }}"><strong><small style="color: #0d21a1 !important;"> {{ $site_info->name }}</small></strong></a> <span class="text-dark">|</span><small style="color: #6c7793;"> Designed And developed by <strong>Web Foundation It</strong></small></a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="wrapper-container">
+                <div class="row justify-content-between">
+                    <div class="col-lg-4 work-time_col"> <div class="work-time">
+                            <h3 class="title">Working Time</h3>
+                            <ul>
+                                <li>Monday
+                                    <p class="time">07:00 - 19:30 PM</p>
+                                </li>
+                                <li>Tuesday
+                                    <p class="time">07:00 - 19:30 PM</p>
+                                </li>
+                                <li>Wednesday
+                                    <p class="time">07:00 - 19:30 PM</p>
+                                </li>
+                                <li>Thursday
+                                    <p class="time">07:00 - 19:30 PM</p>
+                                </li>
+                                <li>Friday
+                                    <p class="time">07:00 - 19:30 PM</p>
+                                </li>
+                                <li>Saturday
+                                    <p class="time">07:00 - 19:30 PM</p>
+                                </li>
+                                <li>Sunday
+                                    <p class="time">07:00 - 19:30 PM</p>
+                                </li>
+                            </ul>
+                            <h4>Emergency Number</h4>
+                            <h2>{{ $site_contact_info->phone }}</h2>
+                        </div></div>
+                    <div class="col-lg-9 p-0">
+                        <address>All Rights Reserved petbox. Designed & Develope by <a class="text-decoration-none" href="javascript:void(0)">Security First</a>
+                        </address>
+                    </div>
                 </div>
             </div>
         </div>
@@ -135,26 +126,26 @@
 <div class="overlay"></div>
 <div class="footer-bottom-bar">
     <div class="bottom-bar d-flex flex-wrap justify-content-around">
-        <a href="{{ url('/') }}" class="bottom-item offer">
+        <a href="#" class="bottom-item offer">
             <div class="bottom-item-icon">
-                <i class="fa fa-home text-light" aria-hidden="true"></i>
+                <i class="fa fa-bookmark" aria-hidden="true"></i>
             </div>
-            <span class="text text-light">Home</span>
+            <span class="text">Offers</span>
         </a>
         {{-- href="https://m.me/babycare.bangladesh" --}}
         <a href="javascript::void(0)" class="bottom-item barnd">
             <div class="bottom-item-icon">
-                <i class="fa-brands fa-facebook-messenger text-light"></i>
+                <i class="fa-brands fa-facebook-messenger"></i>
             </div>
-            <span class="text text-light">Messenger</span>
+            <span class="text">Messenger</span>
         </a>
         <div class="bottom-item cart mc-toggler" id="cart_mobile">
             <a href="{{ route('checkout') }}">
                 <div class="bottom-item-icon">
-                    <i class="fa fa-shopping-cart shopping-cart text-light"></i>
+                    <i class="fa fa-shopping-cart shopping-cart"></i>
                 </div>
-                <span class="text text-light">Cart</span>
-                <span class="value cart-product-count count-mobile bg-warning">0</span>
+                <span class="text">Cart</span>
+                <span class="value count-mobile bg-warning">0</span>
             </a>
         </div>
     </div>
