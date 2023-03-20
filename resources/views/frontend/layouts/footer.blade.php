@@ -145,7 +145,7 @@
                     <i class="fa fa-shopping-cart shopping-cart"></i>
                 </div>
                 <span class="text">Cart</span>
-                <span class="value count-mobile bg-warning">0</span>
+                <span class="value count-mobile bg-warning cart-product-count">0</span>
             </a>
         </div>
     </div>
