@@ -19,7 +19,6 @@
         <div class="p-top-15">
             {{-- Main banner  --}}
             <div id="carouselExampleIndicators" class="carousel slide mt-2" data-bs-ride="true">
-
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
                         aria-current="true" aria-label="Slide 1"></button>
@@ -286,84 +285,210 @@
                 </div>
             </div>
 
-            {{--// Featured product--}}
-            <div class="wrapper-container" style="margin-top: 100px;">
-                <div class="listingtab-style title-style-1" style="margin-bottom: 50px;">
-                    <div id="listingtabs_0" class="block sm-listing-tabs slider">
-                        <div class="block-title">
-                            <strong>featured Products</strong>
-                            <div class="posttext">
-                                Our food does not contain artificial preservatives, so it must be kept frozen to avoid expiration ahead of time.
+            {{--// New product --}}
+            @if (count($new_product))
+                <div class="wrapper-container" style="margin-top: 100px;">
+                    <div class="listingtab-style title-style-1" style="margin-bottom: 50px;">
+                        <div id="listingtabs_0" class="block sm-listing-tabs slider">
+                            <div class="block-title">
+                                <strong>New Arrival</strong>
+                                {{-- <div class="posttext">
+                                    Our food does not contain artificial preservatives, so it must be kept frozen to avoid expiration ahead of time.
+                                </div> --}}
                             </div>
-                        </div>
-                        <!---- Featired product -->
-                        <section id="featured-product">
-                            <div class="">
-                                <!--- Owl carousel -->
-                                <div class="owl-carousel owl-theme">
-                                    @forelse($products_default as $product)
-                                        <div class="item pb-4 pt-1 border m-2">
-                                            <div class="product font-rale">
-                                                <a href="{{ route('product_details', [$product->id]) }}">
-                                                    <img class="img-fluid img{{ $product->id }}" src='{{ asset("$product->photo") }}' alt="{{ $product->title }}" title="{{ $product->title }}">
-                                                    <h6 class="text-center title{{ $product->id }}">{{ $product->title }}</h6>
-                                                </a>
-                                                <div class="text-center">
-                                                    <div class="rating text-warning font-size-12">
-                                                        <span><i class="fas fa-star"></i></span>
-                                                        <span><i class="fas fa-star"></i></span>
-                                                        <span><i class="fas fa-star"></i></span>
-                                                        <span><i class="fas fa-star"></i></span>
-                                                        <span><i class="far fa-star"></i></span>
-                                                    </div>
-                                                    <div class="price py-2">
-                                                        @if($product->discount == 0.00)
-                                                            <span class="regular text-danger">৳</span><span class="text-danger regular-price price{{ $product->id }}">{{ en2bn($product->price) }}</span>
-                                                            <span class="special m-0"></span><span style="display: none;" class="dis-price dis-price{{ $product->id }}" style="text-decoration: line-through">{{ en2bn($product->price - ($product->discount ?? 0)) }}</span>
-                                                        @else
-                                                            <span class="special regular m-0 text-danger">৳</span><span class="text-danger regular-price price{{ $product->id }}">{{ en2bn($product->price) }}</span>
-                                                            <span class="" style="text-decoration: line-through;">৳</span><span class="dis-price dis-price{{ $product->id }}" style="text-decoration: line-through">{{ en2bn($product->price - ($product->discount ?? 0)) }}</span>
-                                                        @endif
-                                                    </div>
-                                                    <a href="" class="btn btn-sm add-to-cart" id="{{ $product->id }}">
-                                                        <i class="fa fa-cart-plus"></i><span> Add to Cart</span>
+                            <div class="banner-image mb-3" style="">
+                                <a class="banner" title="Banner Image" href="#">
+                                    <img class="mark-lazy" src="{{$banners1->image}}" alt="">
+                                </a>
+                            </div>
+                            <!---- Featired product -->
+                            <section id="featured-product">
+                                <div class="">
+                                    <!--- Owl carousel -->
+                                    <div class="owl-carousel owl-theme row cols-2 cols-md-4 cols-lg-6">
+                                        @forelse($new_product as $product)
+                                            <div class="item col pb-4 pt-1 border m-2">
+                                                <div class="product-div font-rale">
+                                                    <a href="{{ route('product_details', [$product->id]) }}">
+                                                        <img class="img-fluid img{{ $product->id }}" src='{{ asset("$product->photo") }}' alt="{{ $product->title }}" title="{{ $product->title }}">
+                                                        <h6 class="text-center title{{ $product->id }}">{{ $product->title }}</h6>
                                                     </a>
+                                                    <div class="text-center">
+                                                        <div class="rating text-warning font-size-12">
+                                                            <span><i class="fas fa-star"></i></span>
+                                                            <span><i class="fas fa-star"></i></span>
+                                                            <span><i class="fas fa-star"></i></span>
+                                                            <span><i class="fas fa-star"></i></span>
+                                                            <span><i class="far fa-star"></i></span>
+                                                        </div>
+                                                        <div class="price py-2">
+                                                            @if($product->discount == 0.00)
+                                                                <span class="regular text-danger">৳</span><span class="text-danger regular-price price{{ $product->id }}">{{ en2bn($product->price) }}</span>
+                                                                <span class="special m-0"></span><span style="display: none;" class="dis-price dis-price{{ $product->id }}" style="text-decoration: line-through">{{ en2bn($product->price - ($product->discount ?? 0)) }}</span>
+                                                            @else
+                                                                <span class="special regular m-0 text-danger">৳</span><span class="text-danger regular-price price{{ $product->id }}">{{ en2bn($product->price) }}</span>
+                                                                <span class="" style="text-decoration: line-through;">৳</span><span class="dis-price dis-price{{ $product->id }}" style="text-decoration: line-through">{{ en2bn($product->price - ($product->discount ?? 0)) }}</span>
+                                                            @endif
+                                                        </div>
+                                                        <a href="" class="btn btn-sm nadd-to-cart" data-value="{{ $product->id }}">
+                                                            <i class="fa fa-cart-plus"></i><span> Add to Cart</span>
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    @empty
-                                        @if (isset($category))
-                                            <p class="w-100 text-center">There are no products in {{ $category->title }} category</p>
-                                        @else
-                                            <p class="w-100 text-center">There are no products</p>
-                                        @endif
-                                    @endforelse
+                                        @empty
+                                        @endforelse
+                                    </div>
+                                    <!--- Owl carousel -->
                                 </div>
-                                <!--- Owl carousel -->
-                            </div>
-                        </section>
-                        <!---- New Phones -->
+                            </section>
+                            <!---- New Phones -->
 
+                        </div>
                     </div>
                 </div>
-            </div>
+            @endif
 
-            <div class="banner-image" style="">
-                <a class="banner" title="Banner Image" href="#">
-                    <img class="mark-lazy" src="http://magento2.magentech.com/themes/sm_petshop/pub/media/wysiwyg/banner/item-1.png" alt="">
-                </a>
-            </div>
+            {{--// Featured product / Default Products--}}
+            @if (count($products))
+                <div class="wrapper-container" style="margin-top: 100px;">
+                    <div class="listingtab-style title-style-1" style="margin-bottom: 50px;">
+                        <div id="listingtabs_0" class="block sm-listing-tabs slider">
+                            <div class="block-title">
+                                <strong>FEATURED PRODUCTS</strong>
+                                {{-- <div class="posttext">
+                                    Our food does not contain artificial preservatives, so it must be kept frozen to avoid expiration ahead of time.
+                                </div> --}}
+                            </div>
+                            <div class="banner-image mb-3" style="">
+                                <a class="banner" title="Banner Image" href="#">
+                                    <img class="mark-lazy" src="{{$banners1->image}}" alt="">
+                                </a>
+                            </div>
+                            <!---- Featired product -->
+                            <section id="featured-product">
+                                <div class="">
+                                    <!--- Owl carousel -->
+                                    <div class="owl-carousel owl-theme row cols-2 cols-md-4 cols-lg-6">
+                                        @forelse($products as $product)
+                                            <div class="item col pb-4 pt-1 border m-2">
+                                                <div class="product-div font-rale">
+                                                    <a href="{{ route('product_details', [$product->id]) }}">
+                                                        <img class="img-fluid img{{ $product->id }}" src='{{ asset("$product->photo") }}' alt="{{ $product->title }}" title="{{ $product->title }}">
+                                                        <h6 class="text-center title{{ $product->id }}">{{ $product->title }}</h6>
+                                                    </a>
+                                                    <div class="text-center">
+                                                        <div class="rating text-warning font-size-12">
+                                                            <span><i class="fas fa-star"></i></span>
+                                                            <span><i class="fas fa-star"></i></span>
+                                                            <span><i class="fas fa-star"></i></span>
+                                                            <span><i class="fas fa-star"></i></span>
+                                                            <span><i class="far fa-star"></i></span>
+                                                        </div>
+                                                        <div class="price py-2">
+                                                            @if($product->discount == 0.00)
+                                                                <span class="regular text-danger">৳</span><span class="text-danger regular-price price{{ $product->id }}">{{ en2bn($product->price) }}</span>
+                                                                <span class="special m-0"></span><span style="display: none;" class="dis-price dis-price{{ $product->id }}" style="text-decoration: line-through">{{ en2bn($product->price - ($product->discount ?? 0)) }}</span>
+                                                            @else
+                                                                <span class="special regular m-0 text-danger">৳</span><span class="text-danger regular-price price{{ $product->id }}">{{ en2bn($product->price) }}</span>
+                                                                <span class="" style="text-decoration: line-through;">৳</span><span class="dis-price dis-price{{ $product->id }}" style="text-decoration: line-through">{{ en2bn($product->price - ($product->discount ?? 0)) }}</span>
+                                                            @endif
+                                                        </div>
+                                                        <a href="" class="btn btn-sm nadd-to-cart" data-value="{{ $product->id }}">
+                                                            <i class="fa fa-cart-plus"></i><span> Add to Cart</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @empty
+                                        @endforelse
+                                    </div>
+                                    <!--- Owl carousel -->
+                                </div>
+                            </section>
+                            <!---- New Phones -->
 
-            {{--Best sellers product show--}}
+                        </div>
+                    </div>
+                </div>
+            @endif
+
+                {{--// Best selling product--}}
+                @if (count($best_selling_prouct))
+                <div class="wrapper-container" style="margin-top: 100px;">
+                    <div class="listingtab-style title-style-1" style="margin-bottom: 50px;">
+                        <div id="listingtabs_0" class="block sm-listing-tabs slider">
+                            <div class="block-title">
+                                <strong>BEST SELLING PRODUCTS</strong>
+                                {{-- <div class="posttext">
+                                    Our food does not contain artificial preservatives, so it must be kept frozen to avoid expiration ahead of time.
+                                </div> --}}
+                            </div>
+                            {{-- Banner for Features selling product --}}
+                            {{-- <div class="banner-image mb-3" style="">
+                                <a class="banner" title="Banner Image" href="#">
+                                    <img class="mark-lazy" src="{{$banners1->image}}" alt="">
+                                </a>
+                            </div> --}}
+                            <!---- Featired product -->
+                            <section id="best-selling-product">
+                                <div class="">
+                                    <!--- Owl carousel -->
+                                    <div class="owl-carousel owl-theme row cols-2 cols-md-4 cols-lg-6">
+                                        @forelse($best_selling_prouct as $product)
+                                            <div class="item col pb-4 pt-1 border m-2">
+                                                <div class="product-div font-rale">
+                                                    <a href="{{ route('product_details', [$product->id]) }}">
+                                                        <img class="img-fluid img{{ $product->id }}" src='{{ asset("$product->photo") }}' alt="{{ $product->title }}" title="{{ $product->title }}">
+                                                        <h6 class="text-center title{{ $product->id }}">{{ $product->title }}</h6>
+                                                    </a>
+                                                    <div class="text-center">
+                                                        <div class="rating text-warning font-size-12">
+                                                            <span><i class="fas fa-star"></i></span>
+                                                            <span><i class="fas fa-star"></i></span>
+                                                            <span><i class="fas fa-star"></i></span>
+                                                            <span><i class="fas fa-star"></i></span>
+                                                            <span><i class="far fa-star"></i></span>
+                                                        </div>
+                                                        <div class="price py-2">
+                                                            @if($product->discount == 0.00)
+                                                                <span class="regular text-danger">৳</span><span class="text-danger regular-price price{{ $product->id }}">{{ en2bn($product->price) }}</span>
+                                                                <span class="special m-0"></span><span style="display: none;" class="dis-price dis-price{{ $product->id }}" style="text-decoration: line-through">{{ en2bn($product->price - ($product->discount ?? 0)) }}</span>
+                                                            @else
+                                                                <span class="special regular m-0 text-danger">৳</span><span class="text-danger regular-price price{{ $product->id }}">{{ en2bn($product->price) }}</span>
+                                                                <span class="" style="text-decoration: line-through;">৳</span><span class="dis-price dis-price{{ $product->id }}" style="text-decoration: line-through">{{ en2bn($product->price - ($product->discount ?? 0)) }}</span>
+                                                            @endif
+                                                        </div>
+                                                        <a href="javascript:void(0)" class="btn btn-sm nadd-to-cart" data-value="{{ $product->id }}">
+                                                            <i class="fa fa-cart-plus"></i><span> Add to Cart</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @empty
+                                        @endforelse
+                                    </div>
+                                    <!--- Owl carousel -->
+                                </div>
+                            </section>
+                            <!---- New Phones -->
+
+                        </div>
+                    </div>
+                </div>
+            @endif
+
+
+
+            {{--Timmer Product show--}}
             <div class="wrapper-container" style="margin-top: 100px;">
                 <div class="listingtab-style title-style-1" style="margin-bottom: 50px;">    <div id="listingtabs_0" class="block sm-listing-tabs slider">
                         <div class="block-title">
-                            <strong>BEST SELLERS</strong>
+                            <strong>Hot Offers</strong>
                             <div class="posttext">
                                 Our food does not contain artificial preservatives, so it must be kept frozen to avoid expiration ahead of time.
                             </div>
                         </div>
-
                         <!---- New Phones -->
                         <section id="new-phones">
                             <div class="">
@@ -428,66 +553,23 @@
                             </div>
                         </section>
                         <!---- New Phones -->
-
                     </div>
                 </div>
             </div>
 
-            <div class="">
-                <div class="">
-                    <div class="block-banner d-none d-md-block d-lg-block" style="margin-bottom: 110px;"><img src="http://magento2.magentech.com/themes/sm_petshop/pub/media/wysiwyg/banner/banner.jpg" alt="">
-                        <div class="inner-content">
-                            <h3 class="title">FRESHPET SELECT DOG FOOD</h3>
-                            <ul>
-                                <li><a href="#">100% NATURAL Farm Raised Chicken</a></li>
-                                <li><a href="#">NEVER any Preservatives</a></li>
-                                <li><a href="#">NO MEAT MEALS or By-product Meals</a></li>
-                            </ul>
-                            <a class="button" href="#">explore</a></div>
-                    </div>
-                </div>
-            </div>
 
             <!--- Brand image show -->
             <section id="brand">
                 <div class="container" style="margin-top: 100px;">
                     <!--- Owl carousel -->
                     <div class="owl-carousel owl-theme">
-                        <div class="item py-2">
-                            <div class="product font-rale">
-                                <a href="#"><img src="product/mobile.jpg" alt="products" class="img-fluid"></a>
+                        @foreach ($brands as $brand)
+                            <div class="item py-2">
+                                <div class="product font-rale">
+                                    <a href="javascript:void()"><img src="{{asset($brand->img)}}" alt="products" class="img-fluid"></a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="item py-2">
-                            <div class="product font-rale">
-                                <a href="#"><img src="product/mobile.jpg" alt="products" class="img-fluid"></a>
-                            </div>
-                        </div>
-                        <div class="item py-2">
-                            <div class="product font-rale">
-                                <a href="#"><img src="product/mobile.jpg" alt="products" class="img-fluid"></a>
-                            </div>
-                        </div>
-                        <div class="item py-2">
-                            <div class="product font-rale">
-                                <a href="#"><img src="product/mobile.jpg" alt="products" class="img-fluid"></a>
-                            </div>
-                        </div>
-                        <div class="item py-2">
-                            <div class="product font-rale">
-                                <a href="#"><img src="product/mobile.jpg" alt="products" class="img-fluid"></a>
-                            </div>
-                        </div>
-                        <div class="item py-2">
-                            <div class="product font-rale">
-                                <a href="#"><img src="product/mobile.jpg" alt="products" class="img-fluid"></a>
-                            </div>
-                        </div>
-                        <div class="item py-2">
-                            <div class="product font-rale">
-                                <a href="#"><img src="product/mobile.jpg" alt="products" class="img-fluid"></a>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                     <!--- Owl carousel -->
                 </div>

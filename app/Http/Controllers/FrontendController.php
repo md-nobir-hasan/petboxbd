@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\AddToCart;
+use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Slider;
-use http\Client\Curl\User;
 use Illuminate\Http\Request;
 use App\Models\CompanyInfo;
 use App\Models\CompanyContact;
@@ -16,7 +16,6 @@ use App\Models\Payment;
 use App\Models\Shipping;
 use App\Models\Product;
 use App\Models\User as ModelsUser;
-use Illuminate\Foundation\Auth\User as AuthUser;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -54,35 +53,30 @@ class FrontendController extends Controller
             }
 
             $n['shipping'] = Shipping::all();
-            //$n['products'] = Product::all();
-
+            $n['brands'] = Brand::all();
             $n['categories'] = DB::table('categories')->orderBy('id', 'DESC')->limit('6')->get();
             $n['sliders'] = Slider::all();
-            $n['banners1'] = DB::table('banners')->orderBy('id', 'ASC')->limit('2')->get();
-            $n['banners2'] = DB::table('banners')->orderBy('id', 'DESC')->limit('2')->get();
+            $n['banners1'] = DB::table('banners')->orderBy('id', 'ASC')->limit('1')->first();
+            $n['banners2'] = DB::table('banners')->orderBy('id', 'DESC')->limit('1')->first();
 
-            $n['products_default'] = Product::orderBy('id', 'DESC')->limit('6')->get();
+            // $n['products_default'] = Product::orderBy('id', 'DESC')->limit('6')->get();
 
            if(serviceCheck('No Product Type')){
             $n['products'] = Product::orderBy('id', 'DESC')->limit('6')->get();
            }else{
                 if($npc = serviceCheck('New Product')){
-                    $new = Product::whereBetween('created_at', [now()->subDays($npc->service->checking), now()])->get();
-                    $product = Product::WhereNotBetween('created_at', [now()->subDays($npc->service->checking), now()])->get();
+                    $n['new_product'] = Product::whereBetween('created_at', [now()->subDays($npc->service->checking), now()])->orderBy('id', 'DESC')->get();
+                    $n['products'] = Product::WhereNotBetween('created_at', [now()->subDays($npc->service->checking), now()])->orderBy('id', 'DESC')->get();
                 }
 
                 if($pc = serviceCheck('Best Selling Product')){
-                    $best_selling_prouct = Product::withSum('orderItem','qty')->orderBy('order_item_sum_qty','desc')->take($pc->service->checking)->get();
+                    $n['best_selling_prouct'] = Product::withSum('orderItem','qty')->orderBy('order_item_sum_qty','desc')->take($pc->service->checking)->orderBy('id', 'DESC')->get();
 
-                    if(count($best_selling_prouct)){
-                        foreach($best_selling_prouct as $value){
-                            $product = $product->where('id','!=',$value->id);
+                    if(count($n['best_selling_prouct'])){
+                        foreach($n['best_selling_prouct'] as $value){
+                            $n['products'] =  $n['products']->where('id','!=',$value->id);
                         }
                     }
-                    $new['name'] = 'New Arrival Products';
-                    $product['name'] = 'Feature Products';
-                    $best_selling_prouct['name'] = 'Best Selling Products';
-                    $n['products'] = [$new,$best_selling_prouct,$product];
                 }
            }
 
