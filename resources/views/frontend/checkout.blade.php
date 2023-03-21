@@ -284,7 +284,7 @@
                                         <option value="">Select shipping area</option>
                                         @foreach ($shippings as $shipping)
                                             <option value="{{ $shipping->id ?? old('shipping') }}">
-                                                {{ $shipping->type . '(' . en2bn($shipping->price) . '৳)' }}</option>
+                                                {{ $shipping->type . '(' . $shipping->price . '৳)' }}</option>
                                         @endforeach
                                     </select>
                                 </div>
