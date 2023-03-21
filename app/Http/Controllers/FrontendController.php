@@ -286,6 +286,8 @@ class FrontendController extends Controller
         $n['data'] = Product::with(['productGallery','productGallery.imageGallery','productGallery.color','productGallery.size','productSize','productSize.size','color','color.color'])->find($id);
         $n['shippings'] = Shipping::all();
         $n['payments'] = Payment::all();
+        // related product collection
+        $n['related_products'] = Product::where('cat_id',$n['data']->cat_id)->get();
 
         return view('frontend.product_details', $n);
     }
