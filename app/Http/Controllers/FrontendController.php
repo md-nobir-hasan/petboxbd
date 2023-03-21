@@ -16,6 +16,7 @@ use App\Models\Payment;
 use App\Models\Shipping;
 use App\Models\Product;
 use App\Models\User as ModelsUser;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -46,6 +47,7 @@ class FrontendController extends Controller
      */
     public function index()
     {
+        Artisan::call('optimize:clear');
         //websiteSetting check
         $data = CompanyInfo::all();
             if(count($data)<1){
