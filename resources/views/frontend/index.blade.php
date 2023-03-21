@@ -296,11 +296,13 @@
                                     Our food does not contain artificial preservatives, so it must be kept frozen to avoid expiration ahead of time.
                                 </div> --}}
                             </div>
+                            @if(count($banners1))
                             <div class="banner-image mb-3" style="">
                                 <a class="banner" title="Banner Image" href="#">
                                     <img class="mark-lazy" src="{{$banners1->image}}" alt="">
                                 </a>
                             </div>
+                            @endif
                             <!---- Featired product -->
                             <section id="featured-product">
                                 <div class="">
@@ -360,11 +362,13 @@
                                     Our food does not contain artificial preservatives, so it must be kept frozen to avoid expiration ahead of time.
                                 </div> --}}
                             </div>
+                            @if(count($banners2))
                             <div class="banner-image mb-3" style="">
                                 <a class="banner" title="Banner Image" href="#">
-                                    <img class="mark-lazy" src="{{$banners1->image}}" alt="">
+                                    <img class="mark-lazy" src="{{$banners2->image}}" alt="">
                                 </a>
                             </div>
+                            @endif
                             <!---- Featired product -->
                             <section id="featured-product">
                                 <div class="">
