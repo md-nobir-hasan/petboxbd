@@ -323,11 +323,11 @@
                                                         </div>
                                                         <div class="price py-2">
                                                             @if($product->discount == 0.00)
-                                                                <span class="regular text-danger">৳</span><span class="text-danger regular-price price{{ $product->id }}">{{ en2bn($product->price) }}</span>
-                                                                <span class="special m-0"></span><span style="display: none;" class="dis-price dis-price{{ $product->id }}" style="text-decoration: line-through">{{ en2bn($product->price - ($product->discount ?? 0)) }}</span>
+                                                                <span class="regular text-danger">৳</span><span class="text-danger regular-price price{{ $product->id }}">{{$product->price }}</span>
+                                                                <span class="special m-0"></span><span style="display: none;" class="dis-price dis-price{{ $product->id }}" style="text-decoration: line-through">{{$product->price - ($product->discount ?? 0)}}</span>
                                                             @else
-                                                                <span class="special regular m-0 text-danger">৳</span><span class="text-danger regular-price price{{ $product->id }}">{{ en2bn($product->price) }}</span>
-                                                                <span class="" style="text-decoration: line-through;">৳</span><span class="dis-price dis-price{{ $product->id }}" style="text-decoration: line-through">{{ en2bn($product->price - ($product->discount ?? 0)) }}</span>
+                                                                <span class="special regular m-0 text-danger">৳</span><span class="text-danger regular-price price{{ $product->id }}">{{$product->price }}</span>
+                                                                <span class="" style="text-decoration: line-through;">৳</span><span class="dis-price dis-price{{ $product->id }}" style="text-decoration: line-through">{{$product->price - ($product->discount ?? 0) }}</span>
                                                             @endif
                                                         </div>
                                                         <a href="" class="btn btn-sm nadd-to-cart" data-value="{{ $product->id }}">
@@ -387,11 +387,11 @@
                                                         </div>
                                                         <div class="price py-2">
                                                             @if($product->discount == 0.00)
-                                                                <span class="regular text-danger">৳</span><span class="text-danger regular-price price{{ $product->id }}">{{ en2bn($product->price) }}</span>
-                                                                <span class="special m-0"></span><span style="display: none;" class="dis-price dis-price{{ $product->id }}" style="text-decoration: line-through">{{ en2bn($product->price - ($product->discount ?? 0)) }}</span>
+                                                                <span class="regular text-danger">৳</span><span class="text-danger regular-price price{{ $product->id }}">{{ $product->price }}</span>
+                                                                <span class="special m-0"></span><span style="display: none;" class="dis-price dis-price{{ $product->id }}" style="text-decoration: line-through">{{$product->price - ($product->discount ?? 0) }}</span>
                                                             @else
-                                                                <span class="special regular m-0 text-danger">৳</span><span class="text-danger regular-price price{{ $product->id }}">{{ en2bn($product->price) }}</span>
-                                                                <span class="" style="text-decoration: line-through;">৳</span><span class="dis-price dis-price{{ $product->id }}" style="text-decoration: line-through">{{ en2bn($product->price - ($product->discount ?? 0)) }}</span>
+                                                                <span class="special regular m-0 text-danger">৳</span><span class="text-danger regular-price price{{ $product->id }}">{{$product->price }}</span>
+                                                                <span class="" style="text-decoration: line-through;">৳</span><span class="dis-price dis-price{{ $product->id }}" style="text-decoration: line-through">{{$product->price - ($product->discount ?? 0) }}</span>
                                                             @endif
                                                         </div>
                                                         <a href="" class="btn btn-sm nadd-to-cart" data-value="{{ $product->id }}">
@@ -452,11 +452,11 @@
                                                         </div>
                                                         <div class="price py-2">
                                                             @if($product->discount == 0.00)
-                                                                <span class="regular text-danger">৳</span><span class="text-danger regular-price price{{ $product->id }}">{{ en2bn($product->price) }}</span>
-                                                                <span class="special m-0"></span><span style="display: none;" class="dis-price dis-price{{ $product->id }}" style="text-decoration: line-through">{{ en2bn($product->price - ($product->discount ?? 0)) }}</span>
+                                                                <span class="regular text-danger">৳</span><span class="text-danger regular-price price{{ $product->id }}">{{$product->price }}</span>
+                                                                <span class="special m-0"></span><span style="display: none;" class="dis-price dis-price{{ $product->id }}" style="text-decoration: line-through">{{$product->price - ($product->discount ?? 0) }}</span>
                                                             @else
-                                                                <span class="special regular m-0 text-danger">৳</span><span class="text-danger regular-price price{{ $product->id }}">{{ en2bn($product->price) }}</span>
-                                                                <span class="" style="text-decoration: line-through;">৳</span><span class="dis-price dis-price{{ $product->id }}" style="text-decoration: line-through">{{ en2bn($product->price - ($product->discount ?? 0)) }}</span>
+                                                                <span class="special regular m-0 text-danger">৳</span><span class="text-danger regular-price price{{ $product->id }}">{{$product->price }}</span>
+                                                                <span class="" style="text-decoration: line-through;">৳</span><span class="dis-price dis-price{{ $product->id }}" style="text-decoration: line-through">{{$product->price - ($product->discount ?? 0) }}</span>
                                                             @endif
                                                         </div>
                                                         <a href="javascript:void(0)" class="btn btn-sm nadd-to-cart" data-value="{{ $product->id }}">

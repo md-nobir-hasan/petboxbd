@@ -35,7 +35,7 @@ class ProductController extends Controller
         if(!check('product')->show){
             return redirect()->back();
         }
-        $products=Product::all();
+        $products=Product::orderBy('id','desc')->get();
 
         return view('backend.pages.product.index')->with('products',$products);
     }
