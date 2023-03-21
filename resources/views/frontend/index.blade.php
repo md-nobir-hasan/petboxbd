@@ -332,7 +332,7 @@
                                                                 <span class="" style="text-decoration: line-through;">৳</span><span class="dis-price dis-price{{ $product->id }}" style="text-decoration: line-through">{{$product->price - ($product->discount ?? 0) }}</span>
                                                             @endif
                                                         </div>
-                                                        <a href="" class="btn btn-sm nadd-to-cart" data-value="{{ $product->id }}">
+                                                        <a href="javascript:void(0)" class="btn btn-sm nadd-to-cart" data-value="{{ $product->id }}">
                                                             <i class="fa fa-cart-plus"></i><span> Add to Cart</span>
                                                         </a>
                                                     </div>
@@ -398,7 +398,7 @@
                                                                 <span class="" style="text-decoration: line-through;">৳</span><span class="dis-price dis-price{{ $product->id }}" style="text-decoration: line-through">{{$product->price - ($product->discount ?? 0) }}</span>
                                                             @endif
                                                         </div>
-                                                        <a href="" class="btn btn-sm nadd-to-cart" data-value="{{ $product->id }}">
+                                                        <a href="avascript:void(0)" class="btn btn-sm nadd-to-cart" data-value="{{ $product->id }}">
                                                             <i class="fa fa-cart-plus"></i><span> Add to Cart</span>
                                                         </a>
                                                     </div>
