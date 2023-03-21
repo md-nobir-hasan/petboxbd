@@ -174,7 +174,7 @@
                     </div>
                     <div class="col-lg-8 col-md-7 mt-4 mt-lg-0 mt-md-0 product_dright" style="border:0px solid #808080; ">
                         <h4 class="title{{ $data->id }}">{{ $data->title }}</h4>
-                        <div class="short-description" style="line-height: 9px">
+                        <div class="short-description">
                             <h4>Summary</h4>
                             <p>
                                 {!! $data->summary !!}
@@ -371,8 +371,8 @@
                     <div class="col-12 pd_description mt-4">
                         <div class="padding">
                             <h2 style="">Dectiption</h2>
-                            <div style="width:100%;border-top:1px solid silver;line-height:9px">
-                                <p style="line-height:9px">
+                            <div style="width:100%;border-top:1px solid silver">
+                                <p >
                                     {!! $data->description !!}
                                 </p>
                             </div>
