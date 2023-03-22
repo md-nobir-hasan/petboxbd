@@ -326,10 +326,9 @@
                                                         <div class="price py-2">
                                                             @if($product->discount == 0.00)
                                                                 <span class="regular text-danger">৳</span><span class="text-danger regular-price price{{ $product->id }}">{{$product->price }}</span>
-                                                                <span class="special m-0"></span><span style="display: none;" class="dis-price dis-price{{ $product->id }}" style="text-decoration: line-through">{{$product->price - ($product->discount ?? 0)}}</span>
                                                             @else
-                                                                <span class="special regular m-0 text-danger">৳</span><span class="text-danger regular-price price{{ $product->id }}">{{$product->price }}</span>
-                                                                <span class="" style="text-decoration: line-through;">৳</span><span class="dis-price dis-price{{ $product->id }}" style="text-decoration: line-through">{{$product->price - ($product->discount ?? 0) }}</span>
+                                                                <span class="special regular m-0 text-danger">৳</span><span class="text-danger regular-price price{{ $product->id }}">{{$product->price- ($product->discount ?? 0) }}</span>
+                                                                <span class="" style="text-decoration: line-through;">৳</span><span class="dis-price dis-price{{ $product->id }}" style="text-decoration: line-through">{{$product->price }}</span>
                                                             @endif
                                                         </div>
                                                         <a href="javascript:void(0)" class="btn btn-sm nadd-to-cart" data-value="{{ $product->id }}">
@@ -391,11 +390,10 @@
                                                         </div>
                                                         <div class="price py-2">
                                                             @if($product->discount == 0.00)
-                                                                <span class="regular text-danger">৳</span><span class="text-danger regular-price price{{ $product->id }}">{{ $product->price }}</span>
-                                                                <span class="special m-0"></span><span style="display: none;" class="dis-price dis-price{{ $product->id }}" style="text-decoration: line-through">{{$product->price - ($product->discount ?? 0) }}</span>
+                                                            <span class="regular text-danger">৳</span><span class="text-danger regular-price price{{ $product->id }}">{{$product->price }}</span>
                                                             @else
-                                                                <span class="special regular m-0 text-danger">৳</span><span class="text-danger regular-price price{{ $product->id }}">{{$product->price }}</span>
-                                                                <span class="" style="text-decoration: line-through;">৳</span><span class="dis-price dis-price{{ $product->id }}" style="text-decoration: line-through">{{$product->price - ($product->discount ?? 0) }}</span>
+                                                                <span class="special regular m-0 text-danger">৳</span><span class="text-danger regular-price price{{ $product->id }}">{{$product->price- ($product->discount ?? 0) }}</span>
+                                                                <span class="" style="text-decoration: line-through;">৳</span><span class="dis-price dis-price{{ $product->id }}" style="text-decoration: line-through">{{$product->price }}</span>
                                                             @endif
                                                         </div>
                                                         <a href="avascript:void(0)" class="btn btn-sm nadd-to-cart" data-value="{{ $product->id }}">
@@ -418,7 +416,7 @@
             @endif
 
                 {{--// Best selling product--}}
-                @if (count($best_selling_prouct))
+            @if (count($best_selling_prouct))
                 <div class="wrapper-container" style="margin-top: 100px;">
                     <div class="listingtab-style title-style-1" style="margin-bottom: 50px;">
                         <div id="listingtabs_0" class="block sm-listing-tabs slider">
@@ -457,10 +455,9 @@
                                                         <div class="price py-2">
                                                             @if($product->discount == 0.00)
                                                                 <span class="regular text-danger">৳</span><span class="text-danger regular-price price{{ $product->id }}">{{$product->price }}</span>
-                                                                <span class="special m-0"></span><span style="display: none;" class="dis-price dis-price{{ $product->id }}" style="text-decoration: line-through">{{$product->price - ($product->discount ?? 0) }}</span>
                                                             @else
-                                                                <span class="special regular m-0 text-danger">৳</span><span class="text-danger regular-price price{{ $product->id }}">{{$product->price }}</span>
-                                                                <span class="" style="text-decoration: line-through;">৳</span><span class="dis-price dis-price{{ $product->id }}" style="text-decoration: line-through">{{$product->price - ($product->discount ?? 0) }}</span>
+                                                                <span class="special regular m-0 text-danger">৳</span><span class="text-danger regular-price price{{ $product->id }}">{{$product->price- ($product->discount ?? 0) }}</span>
+                                                                <span class="" style="text-decoration: line-through;">৳</span><span class="dis-price dis-price{{ $product->id }}" style="text-decoration: line-through">{{$product->price }}</span>
                                                             @endif
                                                         </div>
                                                         <a href="javascript:void(0)" class="btn btn-sm nadd-to-cart" data-value="{{ $product->id }}">
