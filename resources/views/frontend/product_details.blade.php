@@ -236,10 +236,10 @@
 
                             @if($data->discount == 0.00)
                                 <span class="special regular m-0 text-danger">৳</span><span class="text-danger special regular-price price{{ $data->id }}">{{$data->price }}</span>
-                                <span class="" style="text-decoration: line-through; display: none">৳</span><span style="display: none" class="dis-price dis-price{{ $data->id }}" style="text-decoration: line-through">{{$data->price - ($data->discount ?? 0) }}</span>
+                                {{-- <span class="" style="text-decoration: line-through; display: none">৳</span><span style="display: none" class="dis-price dis-price{{ $data->id }}" style="text-decoration: line-through">{{$data->price - ($data->discount ?? 0) }}</span> --}}
                             @else
-                                <span class="special regular m-0 text-danger">৳</span><span class="text-danger special regular-price price{{ $data->id }}">{{$data->price }}</span>
-                                <span class="" style="text-decoration: line-through;">৳</span><span class="dis-price dis-price{{ $data->id }}" style="text-decoration: line-through">{{$data->price - ($data->discount ?? 0) }}</span>
+                                <span class="special regular m-0 text-danger">৳</span><span class="text-danger special regular-price price{{ $data->id }}">{{$data->price - ($data->discount ?? 0)}}</span>
+                                <span class="" style="text-decoration: line-through;">৳</span><span class="dis-price dis-price{{ $data->id }}" style="text-decoration: line-through">{{$data->price  }}</span>
                             @endif
 
                         </div>
