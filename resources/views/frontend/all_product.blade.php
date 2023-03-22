@@ -39,12 +39,12 @@
                                         <button type="button"
                                             class="btn btn-sm text-dark border border-2 border-info">৳
                                             <span class='price'
-                                                data-value='{{ $product->price - ($product->discount ?? 0) }}'>{{ en2bn($product->price - ($product->discount ?? 0)) }}</span>
+                                                data-value='{{ $product->price - ($product->discount ?? 0) }}'>{{ $product->price - ($product->discount ?? 0) }}</span>
                                         </button>
                                         <button type="button"
                                             class="btn btn-sm border text-danger border-2 border-success">
                                             <span class='with-discount'
-                                                data-value='{{ $product->price }}'>৳{{ en2bn($product->price) }}</span>
+                                                data-value='{{ $product->price }}'>৳{{ $product->price }}</span>
                                         </button>
                                     </div>
                                     </p>

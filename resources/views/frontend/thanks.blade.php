@@ -35,9 +35,9 @@
                             @foreach ($orders->orderItem as $order)
                                 <tr>
                                     <td>{{ $order->product->title }}</td>
-                                    <td>৳{{ en2bn($order->price/$order->qty) }}</td>
-                                    <td>{{ en2bn($order->qty) }}</td>
-                                    <td>৳{{ en2bn($order->price) }}</td>
+                                    <td>৳{{ $order->price/$order->qty }}</td>
+                                    <td>{{ $order->qty }}</td>
+                                    <td>৳{{ $order->price }}</td>
 
                                 </tr>
                             @endforeach

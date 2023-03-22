@@ -34,8 +34,8 @@
                                 <div class="text-center">
                                     <div class="d-flex justify-content-center align-items-center mb-3">
                                         <div class="btn-group ">
-                                            <button type="button" class="btn btn-sm btn-price text-dark dis-price{{ $product->id }}">৳ {{ en2bn($product->price - ($product->discount ?? 0)) }}</button>
-                                            <button type="button" style="text-decoration: line-through;" class="btn btn-sm btn-disprice price{{ $product->id }}">৳ {{ en2bn($product->price) }}</button>
+                                            <button type="button" class="btn btn-sm btn-price text-dark dis-price{{ $product->id }}">৳ {{ $product->price - ($product->discount ?? 0) }}</button>
+                                            <button type="button" style="text-decoration: line-through;" class="btn btn-sm btn-disprice price{{ $product->id }}">৳ {{ $product->price }}</button>
                                         </div>
                                     </div>
                                     <a href="" class="btn btn-primary add-to-cart" id="{{ $product->id }}">
@@ -75,8 +75,8 @@
                                 <div class="text-center">
                                     <div class="d-flex justify-content-center align-items-center mb-3">
                                         <div class="btn-group ">
-                                            <button type="button" class="btn btn-sm btn-price text-dark dis-price{{ $product->id }}">৳ {{ en2bn($product->price - ($product->discount ?? 0)) }}</button>
-                                            <button type="button" style="text-decoration: line-through;" class="btn btn-sm btn-disprice price{{ $product->id }}">৳ {{ en2bn($product->price) }}</button>
+                                            <button type="button" class="btn btn-sm btn-price text-dark dis-price{{ $product->id }}">৳ {{ $product->price - ($product->discount ?? 0) }}</button>
+                                            <button type="button" style="text-decoration: line-through;" class="btn btn-sm btn-disprice price{{ $product->id }}">৳ {{ $product->price }}</button>
                                         </div>
                                     </div>
                                     <a href="" class="btn add-to-cart" id="{{ $product->id }}">
@@ -116,8 +116,8 @@
                                 <div class="text-center">
                                     <div class="d-flex justify-content-center align-items-center mb-3">
                                         <div class="btn-group ">
-                                            <button type="button" class="btn btn-sm btn-price text-dark dis-price{{ $product->id }}">৳ {{ en2bn($product->price - ($product->discount ?? 0)) }}</button>
-                                            <button type="button" style="text-decoration: line-through;" class="btn btn-sm btn-disprice price{{ $product->id }}">৳ {{ en2bn($product->price) }}</button>
+                                            <button type="button" class="btn btn-sm btn-price text-dark dis-price{{ $product->id }}">৳ {{ $product->price - ($product->discount ?? 0) }}</button>
+                                            <button type="button" style="text-decoration: line-through;" class="btn btn-sm btn-disprice price{{ $product->id }}">৳ {{ $product->price }}</button>
                                         </div>
                                     </div>
                                     <a href="" class="btn add-to-cart" id="{{ $product->id }}">

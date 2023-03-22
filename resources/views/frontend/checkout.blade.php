@@ -408,8 +408,8 @@
                 } else {
                     let price = Number(bn2en($('.price').eq(index).text()));
                     let total_price = qty * price;
-                    $('.qty').eq(index).val(en2bn(String(qty)));
-                    $('.total-price').eq(index).text(en2bn(String(total_price)));
+                    $('.qty').eq(index).val(String(qty));
+                    $('.total-price').eq(index).text(String(total_price));
                     totalPriceCount();
                 }
             })
@@ -423,8 +423,8 @@
                 } else {
                     let price = Number(bn2en($('.price').eq(index).text()));
                     let total_price = qty * price;
-                    $('.qty').eq(index).val(en2bn(String(qty)));
-                    $('.total-price').eq(index).text(en2bn(String(total_price)));
+                    $('.qty').eq(index).val(String(qty));
+                    $('.total-price').eq(index).text(String(total_price));
                     totalPriceCount();
                 }
             })
@@ -473,7 +473,7 @@
                 $('.total-price').each(function() {
                     total += Number(bn2en($(this).text()));
                 })
-                $('.all-total').text(en2bn(String(total)));
+                $('.all-total').text(String(total));
             }
 
             //remove product from cart
@@ -488,7 +488,7 @@
 
                         let dis_price = Number(bn2en($(item).parent().prev().find('.total-price').html()));
                         let all_total = Number(bn2en($('.all-total').html())) - dis_price;
-                        $('.all-total').html(en2bn(String(all_total)));
+                        $('.all-total').html(String(all_total));
 
                         item.parentElement.parentElement.remove();
                         delete cart_store[id];
