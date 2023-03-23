@@ -22,8 +22,8 @@ class Category extends Model
         return Category::where('parent_id',$id)->orderBy('id','ASC')->pluck('title','id');
     }
 
-    public function child_cat(){
-        return $this->hasMany('App\Models\Category','parent_id','id')->where('status','active');
+    public function subcats(){
+        return $this->hasMany(Subcat::class,'cat_id')->where('status','active');
     }
     public static function getAllParentWithChild(){
         return Category::with('child_cat')->where('is_parent',1)->where('status','active')->orderBy('title','ASC')->get();

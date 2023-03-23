@@ -39,8 +39,6 @@
     }
     // End Toaster object
 
-
-
     //========================== Width wise work ==================================================
     var width = screen.width;
     if (width < 767) {
