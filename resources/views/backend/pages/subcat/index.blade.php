@@ -32,8 +32,7 @@
                                         <th>SL</th>
                                         <th>Category Name</th>
                                         <th>Sub-category Name</th>
-                                        <th>subcat Logo</th>
-                                        <th>subcat Status</th>
+                                        <th>Status</th>
                                         <th class="@if (!check('Sub-category')->edit && !check('Sub-category')->delete) d-none @endif"
                                             id="action">Action</th>
                                     </tr>
@@ -44,9 +43,6 @@
                                             <td>{{ $key + 1 }}</td>
                                             <td>{{ $value->cat->title }}</td>
                                             <td>{{ $value->title }}</td>
-                                            <td><img src="{{ asset($value->img) }}"
-                                                    class="rounded img-thumbnail secreen-logo" alt="{{ $value->title }}">
-                                            </td>
                                             <td>{{ $value->status }}</td>
                                             <td class="text-middle py-0 align-middle @if (!check('Sub-category')->edit && !check('Sub-category')->delete) d-none @endif">
                                                 <div class="btn-group">
