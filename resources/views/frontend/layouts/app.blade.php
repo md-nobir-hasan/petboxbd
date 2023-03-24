@@ -1,5 +1,5 @@
 @php
-    $categories = App\Models\Category::all();
+    $categories = App\Models\Category::with('subcats')->get();
     $google_tag = App\Models\GoogleTag::first();
     $pixel_tag = App\Models\PixelTag::first();
 @endphp

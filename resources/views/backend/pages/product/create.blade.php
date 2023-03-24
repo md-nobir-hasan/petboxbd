@@ -9,9 +9,9 @@
 @push('page_css')
 <style>
     .custom-border{
-    border: 2px solid #80808033;
-    padding: 10px;
-}
+        border: 2px solid #80808033;
+        padding: 10px;
+    }
 </style>
 @endpush
 
@@ -76,6 +76,18 @@
                                             <label for="cat_id">Category <span class="text-danger">*</span></label>
                                             <select name="cat_id" id="cat_id" class="form-control" required>
                                                 <option value="">--Select any category--</option>
+                                                @foreach ($category as $key => $cat_data)
+                                                    <option value='{{ $cat_data->id }}'>{{ $cat_data->title }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    @endif
+
+                                    @if (check('Category'))
+                                        <div class="form-group">
+                                            <label for="cat_id">Sub-category <span class="text-danger">*</span></label>
+                                            <select name="cat_id" id="cat_id" class="form-control" required>
+                                                <option value="">--Select any sub-category--</option>
                                                 @foreach ($category as $key => $cat_data)
                                                     <option value='{{ $cat_data->id }}'>{{ $cat_data->title }}</option>
                                                 @endforeach
@@ -286,6 +298,20 @@
                 width: '150px',
                 height: '150px'
             });
+
+            $('#cat_id').change(function () {
+                let val = $(this).value();
+                console.log(val);
+                ajax({
+                    action:'show',
+                    'data_obj':{
+                        id : val,
+                    }
+                    'model':'Subcat'
+                },function(res){
+                    console.log(res);
+                })
+             })
 
             $('#add_color').on('click',function(e){
                 var element = $(this);

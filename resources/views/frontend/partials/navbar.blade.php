@@ -77,7 +77,7 @@
     {{-- Another navbar  --}}
     <nav class="navbar fixed d-lg-none bg-1" id="navbar">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Offcanvas dark navbar</a>
+          <a class="navbar-brand" href="#">{{$site_info->title}}</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -97,7 +97,7 @@
                         @foreach ($cat->subcats as $subcat)
                             <ul class="dropdown-menu dropdown-menu-dark">
                                 <li>
-                                    <a class="dropdown-item" href="#">{{$subcat->title}}</a>
+                                    <a class="dropdown-item" href="{{route('product.subcat',[$cat->id,$subcat->id])}}">{{$subcat->title}}</a>
                                 </li>
                             </ul>
                         @endforeach

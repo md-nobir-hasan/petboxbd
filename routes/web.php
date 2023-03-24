@@ -51,6 +51,7 @@ Route::get('/ajax-fetch', [AjaxController::class,'ajaxFetch'])->name('ajax-fetch
 Route::get('/redirect', [FrontendController::class, 'redirect']);
 
 Route::get('/category-product/{id}', [FrontendController::class,'categoryWiseShow'])->name('category');
+Route::get('/category-product/{id}/{$id2}', [FrontendController::class,'subcatWiseShow'])->name('product.subcat');
 Route::post('single/order', [FrontendController::class,'store'])->name('single.store');
 Route::get('/all_category', [FrontendController::class,'all_category'])->name('all-category');
 Route::get('/all_product', [FrontendController::class,'all_product'])->name('all_product');
