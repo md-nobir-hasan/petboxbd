@@ -95,7 +95,7 @@
                             {{$cat->title}}
                         </a>
                         @foreach ($cat->subcats as $subcat)
-                            <ul class="dropdown-menu dropdown-menu-dark">
+                            <ul class="dropdown-menu dropdown-menu-dark ms-3">
                                 <li>
                                     <a class="dropdown-item" href="{{route('product.subcat',[$cat->id,$subcat->id])}}">{{$subcat->title}}</a>
                                 </li>

@@ -16,13 +16,13 @@
         <div class="p-top-15 container-fluid">
 
             {{-- All Products show --}}
-            <div class="" style="margin-top: 60px;">
+            <div class="" style="margin-top: 90px;">
                 <div class="d-grid gap-2 py-3">
                     <button class="btn rounded-0 py-2" style="text-align: left" type="button"><h4 class="m-0"><i class="fa-solid fa-list"></i> {{$name}}</h4></button>
                 </div>
 
                 <div class="row row-cols-2 row-cols-md-6 g-3">
-                    @foreach ($products as $product)
+                    @forelse ($products as $product)
                         <div class="col">
                             <div class="card h-100 product-div text-center">
                                 <a href="{{ route('product_details', [$product->id]) }}">
@@ -58,7 +58,9 @@
                                 </div>
                             </div>
                         </div>
-                    @endforeach
+                        @empty
+                        <h5 class="text-center mx-auto mt-3">There are no products</h5>
+                    @endforelse
                 </div>
             </div>
 

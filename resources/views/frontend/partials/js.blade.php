@@ -152,36 +152,36 @@
 
     window.addEventListener('load', function() {
         // =============================== side navbar tigger ====================================
-        let side_nav_tigger = $('.menu-nav-bar, #inputGroup-sizing-default');
-        let check = false;
-        if (width > 991) {
-            check = true;
-        }
+        // let side_nav_tigger = $('.menu-nav-bar, #inputGroup-sizing-default');
+        // let check = false;
+        // if (width > 991) {
+        //     check = true;
+        // }
 
-        side_nav_tigger.on('click', function() {
-            let side_nav = document.getElementById('side_nav');
-            if (check) {
-                side_nav.style.left = '-360px';
-                if (width > 991) {
-                    $('.main-content-wrapper, .footer, .top-navbar, .header-top-wrapper').css({
-                        width: '100%',
-                        marginLeft: "0px"
-                    });
+        // side_nav_tigger.on('click', function() {
+        //     let side_nav = document.getElementById('side_nav');
+        //     if (check) {
+        //         side_nav.style.left = '-360px';
+        //         if (width > 991) {
+        //             $('.main-content-wrapper, .footer, .top-navbar, .header-top-wrapper').css({
+        //                 width: '100%',
+        //                 marginLeft: "0px"
+        //             });
 
-                }
-                check = false;
-            } else {
-                side_nav.style.left = '0';
-                if (width > 991) {
+        //         }
+        //         check = false;
+        //     } else {
+        //         side_nav.style.left = '0';
+        //         if (width > 991) {
 
-                    $('.main-content-wrapper, .footer, .top-navbar, .header-top-wrapper').css({
-                        marginLeft: "280px",
-                        width: 'calc(100% - 280px)'
-                    });
-                }
-                check = true;
-            }
-        });
+        //             $('.main-content-wrapper, .footer, .top-navbar, .header-top-wrapper').css({
+        //                 marginLeft: "280px",
+        //                 width: 'calc(100% - 280px)'
+        //             });
+        //         }
+        //         check = true;
+        //     }
+        // });
         // =============================== End  ====================================
 
 
