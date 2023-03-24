@@ -79,6 +79,20 @@
                                         </div>
                                     @endif
 
+                                    @if (check('Sub-category'))
+                                        <div class="form-group">
+                                            <label for="sub_cat_id">Sub-category <span class="text-danger">*</span></label>
+                                            <select name="sub_cat_id" id="sub_cat_id" class="form-control" required>
+                                                <option value="">--Select any sub-category--</option>
+                                                @foreach ($sub_cats as $key => $sub_cat)
+                                                    <option value='{{ $sub_cat->id }}'
+                                                        @if ($sub_cat->id == $product->subcat_id) selected @endif>
+                                                        {{ $sub_cat->title }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    @endif
+
                                     <div class="form-group">
                                         <label for="price" class="col-form-label">Price(TK) <span
                                                 class="text-danger">*</span></label>
@@ -310,6 +324,23 @@
                 width: '150px',
                 height: '150px'
             });
+
+            $('#cat_id1').on('change',function () {
+                let val = $(this).val();
+                $.ajax({
+                    url:"{{route('ajax.subcat')}}",
+                    method: 'get',
+                    data: {id:val},
+                    success:function(res){
+                        let option = '<option>Select Subcat</option>';
+                       res.forEach(element => {
+                        option += `<option value='${element.id}'>${element.title}</option>`;
+                       });
+                       $('#sub_cat_id').html(option);
+                    }
+                })
+             })
+
             let img = '';
             let name = $('.multiple-img').prop('name');
             @foreach ($product->productGallery as $img)

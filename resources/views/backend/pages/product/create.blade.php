@@ -73,8 +73,8 @@
                                     </div>
                                     @if (check('Category'))
                                         <div class="form-group">
-                                            <label for="cat_id">Category <span class="text-danger">*</span></label>
-                                            <select name="cat_id" id="cat_id" class="form-control" required>
+                                            <label for="cat_id1">Category <span class="text-danger">*</span></label>
+                                            <select name="cat_id" id="cat_id1" class="form-control" required>
                                                 <option value="">--Select any category--</option>
                                                 @foreach ($category as $key => $cat_data)
                                                     <option value='{{ $cat_data->id }}'>{{ $cat_data->title }}</option>
@@ -83,14 +83,12 @@
                                         </div>
                                     @endif
 
-                                    @if (check('Category'))
+                                    @if (check('Sub-category'))
                                         <div class="form-group">
-                                            <label for="cat_id">Sub-category <span class="text-danger">*</span></label>
-                                            <select name="cat_id" id="cat_id" class="form-control" required>
+                                            <label for="sub_cat_id">Sub-category <span class="text-danger">*</span></label>
+                                            <select name="sub_cat_id" id="sub_cat_id" class="form-control" required>
                                                 <option value="">--Select any sub-category--</option>
-                                                @foreach ($category as $key => $cat_data)
-                                                    <option value='{{ $cat_data->id }}'>{{ $cat_data->title }}</option>
-                                                @endforeach
+
                                             </select>
                                         </div>
                                     @endif
@@ -299,17 +297,19 @@
                 height: '150px'
             });
 
-            $('#cat_id').change(function () {
-                let val = $(this).value();
-                console.log(val);
-                ajax({
-                    action:'show',
-                    'data_obj':{
-                        id : val,
+            $('#cat_id1').on('change',function () {
+                let val = $(this).val();
+                $.ajax({
+                    url:"{{route('ajax.subcat')}}",
+                    method: 'get',
+                    data: {id:val},
+                    success:function(res){
+                        let option = '<option>Select Subcat</option>';
+                       res.forEach(element => {
+                        option += `<option value='${element.id}'>${element.title}</option>`;
+                       });
+                       $('#sub_cat_id').html(option);
                     }
-                    'model':'Subcat'
-                },function(res){
-                    console.log(res);
                 })
              })
 

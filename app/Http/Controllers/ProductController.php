@@ -14,6 +14,7 @@ use App\Models\ProductSize;
 use App\Models\Shipping;
 use App\Models\PaColor;
 use App\Models\PaSize;
+use App\Models\Subcat;
 use Faker\Core\Color;
 use Illuminate\Support\Facades\Artisan;
 
@@ -77,6 +78,7 @@ class ProductController extends Controller
             $insert->summary = $request->summary;
             $insert->description = $request->description;
             $insert->cat_id = $request->cat_id;
+            $insert->subcat_id = $request->sub_cat_id;
             $insert->price = $request->price;
             $insert->discount = $request->discount;
             $insert->brand_id = $request->brand_id;
@@ -167,6 +169,7 @@ class ProductController extends Controller
         $n['brands']=Brand::get();
         $n['product']=Product::findOrFail($id);
         $n['categories']=Category::all();
+        $n['sub_cats']=Subcat::where('cat_id',$n['product']->cat_id)->orderBy('id','desc')->get();
         // $n['products']=Product::all();
         $n['colors']=ProductColor::all();
         $n['sizes']=ProductSize::all();
@@ -192,6 +195,7 @@ class ProductController extends Controller
         $update->summary = $request->summary;
         $update->description = $request->description;
         $update->cat_id = $request->cat_id;
+        $update->subcat_id = $request->sub_cat_id;
         $update->price = $request->price;
         $update->discount = $request->discount;
         $update->brand_id = $request->brand_id;

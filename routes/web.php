@@ -70,6 +70,7 @@ Route::resource('addtocart',AddToCartController::class);
 // Route for  both
    //Ajax CURD Option
    Route::controller(AjaxController::class)->prefix('ajax')->name('ajax.')->group(function(){
+    Route::get('/subcat','subcatFetch')->name('subcat');
     Route::post('/insert','store')->name('store');
     Route::post('/single/insert','singleStore')->name('singlestore');
     Route::post('/index','index')->name('index');
