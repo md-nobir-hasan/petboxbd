@@ -332,7 +332,7 @@
                     method: 'get',
                     data: {id:val},
                     success:function(res){
-                        let option = '<option>Select Subcat</option>';
+                        let option = '<option>Select sub-category</option>';
                        res.forEach(element => {
                         option += `<option value='${element.id}'>${element.title}</option>`;
                        });
