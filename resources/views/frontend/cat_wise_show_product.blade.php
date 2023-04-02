@@ -32,12 +32,16 @@
                                     </div>
                                 </a>
                                 <div class="text-center">
-                                    <div class="d-flex justify-content-center align-items-center mb-3">
-                                        <div class="btn-group ">
-                                            <button type="button" class="btn btn-sm btn-price text-dark dis-price{{ $product->id }}">৳ {{ $product->price - ($product->discount ?? 0) }}</button>
-                                            <button type="button" style="text-decoration: line-through;" class="btn btn-sm btn-disprice price{{ $product->id }}">৳ {{ $product->price }}</button>
+                                    {{-- <div class="d-flex justify-content-center align-items-center mb-3"> --}}
+                                        <div class="price py-2">
+                                            @if($product->discount == 0.00)
+                                                <span class="regular text-danger">৳</span><span class="text-danger regular-price price{{ $product->id }}">{{$product->price }}</span>
+                                            @else
+                                                <span class="special regular m-0 text-danger">৳</span><span class="text-danger regular-price price{{ $product->id }}">{{$product->price- ($product->discount ?? 0) }}</span>
+                                                <span class="" style="text-decoration: line-through;">৳</span><span class="dis-price dis-price{{ $product->id }}" style="text-decoration: line-through">{{$product->price }}</span>
+                                            @endif
                                         </div>
-                                    </div>
+                                    {{-- </div> --}}
                                     <a href="" class="btn btn-primary add-to-cart" id="{{ $product->id }}">
                                         <i class="fa fa-cart-plus"></i><span> Add to Cart</span>
                                     </a>
