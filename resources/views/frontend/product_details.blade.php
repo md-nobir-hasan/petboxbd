@@ -273,9 +273,21 @@
                                     <i class="fa fa-cart-plus"></i>&nbsp;<span> Add to Cart</span>
                                 </a>
                             </div>
-                            <div class="wishlist">
-                                <a href=""><span><i class="fa-regular fa-heart"></i></span></a>
-                            </div>
+                            @php
+                               $wish = $data->wishlistCheck()
+                            @endphp
+
+                                <div class="dwishlist" data-id="{{ $wish ? $wish->id : ''}}">
+                                    <a href="javascript:void(0)">
+                                        <span><i class="fa-solid fa-heart" style="color: #ffcc00;font-size: 30px;"></i></span>
+                                    </a>
+                                </div>
+
+                                <div class="nwishlist" data-id="{{ $data->id }}">
+                                    <a href="javascript:void(0)"><span><i class="fa-regular fa-heart" style="font-size: 30px;"></i></span></a>
+                                </div>
+
+
                         </div>
                     </div>
                 </div>
@@ -304,31 +316,7 @@
                             <div class="tab-pane fade show active mt-4" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 {!! $data->description !!}
                             </div>
-                            {{-- This div for more information  --}}
-                            {{-- <div class="tab-pane fade mt-4" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 
-                                <div class="data item content resp-tab-content" id="additional" data-role="content" aria-labelledby="tab-label-additional" role="tabpanel" aria-hidden="false" style="display: block;">
-                                    <div class="additional-attributes-wrapper table-wrapper">
-                                        <table class="data table additional-attributes" id="product-attribute-specs-table">
-                                            <tbody>
-                                            <tr>
-                                                <th class="col label" scope="row">Color</th>
-                                                <td class="col data" data-th="Color">White</td>
-                                            </tr>
-                                            <tr>
-                                                <th class="col label" scope="row">Size</th>
-                                                <td class="col data" data-th="Size">30 cm</td>
-                                            </tr>
-                                            <tr>
-                                                <th class="col label" scope="row">Manufacturer</th>
-                                                <td class="col data" data-th="Manufacturer">The Back Yard</td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-
-                            </div> --}}
                             <div class="tab-pane fade mt-4" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                                 <h3 class="">Customer Reviews</h3>
                                 <h5 class="py-3">Excepteur sint occaecat cupidatat</h5>
@@ -489,6 +477,14 @@
 @push('custom-js')
     <script>
         // Product details page custom js
+        let wish = "{{$data->wishlistCheck()}}";
+                if(wish){
+                    $('.dwishlist').show();
+                    $('.nwishlist').hide();
+                }else{
+                    $('.dwishlist').hide();
+                    $('.nwishlist').show();
+                }
            $(document).ready(function() {
             DBaddToCart();
             $("ul.menu-items > li").on("click", function() {
@@ -513,6 +509,34 @@
 
                     $('.real-price').attr('id',single_price);
                     $('.real-price').val(result);
+                })
+
+
+                $('.nwishlist').on('click',function(){
+                    let id = $(this).attr('data-id')
+                    let ip_address = "{{Request::ip()}}";
+                    let user_id = "{{Auth::user()->id}}";
+                    let data = {
+                        product_id:id,
+                        ip_address:ip_address,
+                        user_id:user_id,
+                    }
+                    console.log(data);
+                    ajax({action:'store',model:'Wishlist',data_obj:data},function(res){
+                        console.log(res);
+                        $('.dwishlist').show();
+                        $('.dwishlist').attr('data-id',res.id);
+                        $('.nwishlist').hide();
+                    })
+                })
+                $('.dwishlist').on('click',function(){
+                    let id = $(this).attr('data-id');
+                    console.log(id);
+                    ajax({action:'delete',model:'Wishlist',data_obj:{id:id}},function(res){
+                        $('.nwishlist').show();
+                        $('.dwishlist').hide();
+                        console.log(res);
+                    })
                 })
         });
     </script>

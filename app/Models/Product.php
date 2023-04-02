@@ -4,6 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Cart;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Request;
+
 class Product extends Model
 {
     protected $fillable=['title','sku','slug','summary','description','cat_id','child_cat_id','price','brand_id','discount','status','photo','size','stock','is_featured','condition', 'product_gallery'];
@@ -67,6 +70,19 @@ class Product extends Model
 
     public function singelProductFetch($id){
         return Product::find($id);
+    }
+
+    public function wishlistCheck(){
+        $product_id = $this->id;
+        $user_id = Auth::user()->id;
+        $ip_address = Request::ip();
+        $check = null;
+        if($user_id){
+           $check =  Wishlist::where('user_id',$user_id)->where('product_id',$product_id)->first();
+        }else{
+            $check = Wishlist::where('ip_address',$ip_address)->where('product_id',$product_id)->first();
+        }
+        return $check;
     }
 
 }

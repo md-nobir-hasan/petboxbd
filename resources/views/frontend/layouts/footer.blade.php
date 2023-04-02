@@ -60,7 +60,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="block-footer">
-                                    <div class="logo-ft"><a href="#"><img src="{{ $site_info->logo }}" alt=""></a></div>
+                                    <div class="logo-ft"><a href="#"><img src="{{ asset($site_info->logo) }}" alt=""></a></div>
                                     <div class="block-footer-content footer-contact">
                                         <ul>
                                             <li class="address">Location: {{ $site_info->address }}</li>
