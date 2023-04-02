@@ -7,6 +7,7 @@ use App\Models\ImageGallery;
 use Illuminate\Http\Request;
 use App\Models\Payment;
 use App\Models\ProductGallery;
+use App\Models\Subcat;
 use Illuminate\Support\Facades\DB;
 use Symfony\Component\Console\Input\Input;
 
@@ -17,7 +18,7 @@ class AjaxController extends Controller
     }
 
     public function index(Request $req){
-        $model = $insert = '\\App\\Models\\'.$req->model;
+        $model = '\\App\\Models\\'.$req->model;
         $id = (int)$req->data_obj['id'];
         $data = $model::with($req->with_arr)->find($id);
         return response()->json($data);
@@ -75,5 +76,9 @@ class AjaxController extends Controller
 
        $delete = $delete->delete();
         return response()->json($delete);
+    }
+
+    public function subcatFetch(Request $req){
+        return Subcat::where('cat_id',$req->id)->orderBy('id','desc')->get();
     }
 }

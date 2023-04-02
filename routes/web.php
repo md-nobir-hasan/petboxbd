@@ -51,6 +51,7 @@ Route::get('/ajax-fetch', [AjaxController::class,'ajaxFetch'])->name('ajax-fetch
 Route::get('/redirect', [FrontendController::class, 'redirect']);
 
 Route::get('/category-product/{id}', [FrontendController::class,'categoryWiseShow'])->name('category');
+Route::get('/product/sub-category/{id}/{id2}', [FrontendController::class,'subcatWiseShow'])->name('product.subcat');
 Route::post('single/order', [FrontendController::class,'store'])->name('single.store');
 Route::get('/all_category', [FrontendController::class,'all_category'])->name('all-category');
 Route::get('/all_product', [FrontendController::class,'all_product'])->name('all_product');
@@ -69,6 +70,7 @@ Route::resource('addtocart',AddToCartController::class);
 // Route for  both
    //Ajax CURD Option
    Route::controller(AjaxController::class)->prefix('ajax')->name('ajax.')->group(function(){
+    Route::get('/subcat','subcatFetch')->name('subcat');
     Route::post('/insert','store')->name('store');
     Route::post('/single/insert','singleStore')->name('singlestore');
     Route::post('/index','index')->name('index');

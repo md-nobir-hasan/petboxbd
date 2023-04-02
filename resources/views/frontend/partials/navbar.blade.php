@@ -1,5 +1,4 @@
 <header style="">
-
     <div class="top-navbar" style="background-color: white;">
         <div class="wrapper-container">
             <div class="row">
@@ -24,7 +23,7 @@
         </div>
     </div>
 
-    <div class="wrapper-container nav_bar" style="background-color: white">
+    <div class="wrapper-container nav_bar d-none d-lg-block" style="background-color: white">
         <nav class="navbar navbar-expand-lg bg-body-tertiary m-0 p-0">
             <a class="navbar-brand logo" href="{{ url('/') }}">
                 <img src="/{{ $site_info->logo }}" alt="" style="">
@@ -74,6 +73,43 @@
             </div>
         </nav>
     </div>
+
+    {{-- Another navbar  --}}
+    <nav class="navbar fixed d-lg-none bg-1" id="navbar">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="{{url('/')}}">{{$site_info->title}}</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">{{$site_info->title}}</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body bg-1">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                @foreach ($categories as $cat)
+                @if (count($cat->subcats)>0)
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            {{$cat->title}}
+                        </a>
+                        @foreach ($cat->subcats as $subcat)
+                            <ul class="dropdown-menu dropdown-menu-dark ms-3">
+                                <li>
+                                    <a class="dropdown-item" href="{{route('product.subcat',[$cat->id,$subcat->id])}}">{{$subcat->title}}</a>
+                                </li>
+                            </ul>
+                        @endforeach
+                    </li>
+                @endif
+                @endforeach
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+
     <div class="py-3 d-lg-none border-top border-bottom" style="background-color: #f5f5f5;" style="">
         <div class="wrapper-container">
             <div class="search" style="width: 100%">

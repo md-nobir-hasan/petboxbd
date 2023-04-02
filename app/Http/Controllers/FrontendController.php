@@ -266,6 +266,14 @@ class FrontendController extends Controller
             return view('frontend.all_product',$n);
         }
     }
+    public function subcatWiseShow($id,$id2){
+        // if($id){
+            $n['products'] = Product::with(['category'])->where('cat_id',$id)->where('subcat_id',$id2)->get();
+            $n['name'] = 'Products of '.Category::find($id)->title;
+            $n['sliders'] = Slider::all();
+            return view('frontend.all_product',$n);
+        // }
+    }
 
     // All category show
     public function all_category(){

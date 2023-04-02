@@ -56,6 +56,14 @@ h6 {
     font-weight: 400;
 }
 
+/* Color setup Start  */
+.bg-1{
+    background-color: #fed700;
+}
+/* End Color setup  */
+.dropdown .nav-link{
+    font-size: 25px;
+}
 /* Notification Start  */
 .notification {
     position: fixed;

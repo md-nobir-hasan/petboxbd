@@ -17,7 +17,7 @@ class CreateSubcatsTable extends Migration
             $table->id();
              $table->unsignedBigInteger('cat_id');
             $table->string('title');
-            $table->string('img');
+            $table->string('img')->nullable();
             $table->enum('status',['active','inactive'])->default('inactive');
             $table->timestamps();
         });

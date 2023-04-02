@@ -16,7 +16,7 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('cat_id')->nullable();
-            $table->unsignedBigInteger('child_cat_id')->nullable();
+            $table->unsignedBigInteger('subcat_id')->nullable();
             $table->unsignedBigInteger('brand_id')->nullable();
             $table->string('title');
             $table->string('sku')->nullable();
@@ -35,6 +35,7 @@ class CreateProductsTable extends Migration
 
         Schema::table('products', function (Blueprint $table) {
             $table->foreign('cat_id', 'products_cat_id')->references('id')->on('categories')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('subcat_id', 'products_subcat_id')->references('id')->on('subcats')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('brand_id', 'products_brand_id')->references('id')->on('brands')->onDelete('cascade')->onUpdate('cascade');
         });
     }

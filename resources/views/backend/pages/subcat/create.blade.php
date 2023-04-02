@@ -50,7 +50,7 @@
                                         @enderror
                                     </div>
 
-                                    <div class="form-group">
+                                    {{-- <div class="form-group">
                                         <label for="img" class="col-form-label">Sub-category Logo <span
                                                 class="text-danger">*</span></label>
                                         <input id="img" type="file" name="img" placeholder="Enter logo"
@@ -58,7 +58,7 @@
                                         @error('img')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
-                                    </div>
+                                    </div> --}}
 
                                     <div class="form-group">
                                         <label for="status" class="col-form-label">Status <span
