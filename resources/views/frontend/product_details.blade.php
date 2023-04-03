@@ -273,9 +273,10 @@
                                     <i class="fa fa-cart-plus"></i>&nbsp;<span> Add to Cart</span>
                                 </a>
                             </div>
-                            @php
-                               $wish = $data->wishlistCheck()
-                            @endphp
+                            @if (serviceCheck('Wishlist'))
+                                @php
+                                $wish = $data->wishlistCheck()
+                                @endphp
 
                                 <div class="dwishlist" data-id="{{ $wish ? $wish->id : ''}}">
                                     <a href="javascript:void(0)">
@@ -286,7 +287,7 @@
                                 <div class="nwishlist" data-id="{{ $data->id }}">
                                     <a href="javascript:void(0)"><span><i class="fa-regular fa-heart" style="font-size: 30px;"></i></span></a>
                                 </div>
-
+                            @endif
 
                         </div>
                     </div>
@@ -511,33 +512,35 @@
                     $('.real-price').val(result);
                 })
 
-
-                $('.nwishlist').on('click',function(){
-                    let id = $(this).attr('data-id')
-                    let ip_address = "{{Request::ip()}}";
-                    let user_id = "{{Auth::user()->id}}";
-                    let data = {
-                        product_id:id,
-                        ip_address:ip_address,
-                        user_id:user_id,
-                    }
-                    console.log(data);
-                    ajax({action:'store',model:'Wishlist',data_obj:data},function(res){
-                        console.log(res);
-                        $('.dwishlist').show();
-                        $('.dwishlist').attr('data-id',res.id);
-                        $('.nwishlist').hide();
+                //Wishlist
+                @if (serviceCheck('Wishlist'))
+                    $('.nwishlist').on('click',function(){
+                        let id = $(this).attr('data-id')
+                        let ip_address = "{{Request::ip()}}";
+                        let user_id = "{{Auth::user()->id}}";
+                        let data = {
+                            product_id:id,
+                            ip_address:ip_address,
+                            user_id:user_id,
+                        }
+                        console.log(data);
+                        ajax({action:'store',model:'Wishlist',data_obj:data},function(res){
+                            console.log(res);
+                            $('.dwishlist').show();
+                            $('.dwishlist').attr('data-id',res.id);
+                            $('.nwishlist').hide();
+                        })
                     })
-                })
-                $('.dwishlist').on('click',function(){
-                    let id = $(this).attr('data-id');
-                    console.log(id);
-                    ajax({action:'delete',model:'Wishlist',data_obj:{id:id}},function(res){
-                        $('.nwishlist').show();
-                        $('.dwishlist').hide();
-                        console.log(res);
+                    $('.dwishlist').on('click',function(){
+                        let id = $(this).attr('data-id');
+                        console.log(id);
+                        ajax({action:'delete',model:'Wishlist',data_obj:{id:id}},function(res){
+                            $('.nwishlist').show();
+                            $('.dwishlist').hide();
+                            console.log(res);
+                        })
                     })
-                })
+                @endif
         });
     </script>
 @endpush

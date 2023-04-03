@@ -2,19 +2,28 @@
     <div class="top-navbar" style="background-color: white;">
         <div class="wrapper-container">
             <div class="row">
-                <div class="col-md-4 col-sm-4 col-xs-4">
+                <div class="col">
                     <p class="m-0 text-center text-white py-1 border_right" style="font-size: 13px !important;">
                         <a class="text-black" href="javascript:void(0)"><i class="fa-solid fa-location-dot"></i> {{ $site_info->address }}</a>
                     </p>
                 </div>
 
-                <div class="col-md-4 col-sm-4 col-xs-4">
+                <div class="col">
                     <p class="m-0 text-center text-white py-1 border_right" style="font-size: 13px !important;">
                         <a class="text-black" href="tel:{{ $site_contact_info->phone }}"><i class="fa-solid fa-square-phone"></i> {{ $site_contact_info->phone }}</a>
                     </p>
                 </div>
+                @if (serviceCheck('Wishlist'))
+                    <div class="col">
+                        <p class="m-0 text-center text-white py-1 border_right" style="font-size: 13px !important;">
+                            <a href="{{route('wishlist.index')}}">
+                                <span class="text-dark"><i class="fa-solid fa-heart" style="color: #ffcc00;font-size: 20px;"></i> {{ count($wishlists) }}</span>
+                            </a>
+                        </p>
+                    </div>
+                @endif
 
-                <div class="col-md-4 col-sm-4 col-xs-4">
+                <div class="col">
                     <p class="m-0 text-center text-white py-1" style="font-size: 13px !important;">
                         <a class="mx-2 text-black" href="tel:{{ $site_contact_info->email }}"><i class="fa-solid fa-envelope"></i> {{ $site_contact_info->email }}</a>
                     </p>

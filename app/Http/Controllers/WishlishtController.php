@@ -6,6 +6,8 @@ use App\Models\Wishlist;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreWishlistRequest;
 use App\Http\Requests\UpdateWishlistRequest;
+use App\Models\Payment;
+use Illuminate\Support\Facades\Auth;
 
 class WishlishtController extends Controller
 {
@@ -16,7 +18,13 @@ class WishlishtController extends Controller
      */
     public function index()
     {
-        //
+        if(Auth::user()){
+            $n['wishlists'] = Wishlist::where('user_id',Auth::user()->id)->get();
+        }else{
+            $n['wishlists'] = Wishlist::where('ip_address',request()->ip())->get();
+        }
+        $n['payments'] = Payment::all();
+        return view('frontend.wishlist',$n);
     }
 
     /**
