@@ -533,74 +533,99 @@
                                 <!--- Owl carousel -->
                                 <div class="row">
                                    @foreach ($timer_products as $timer_product)
-                                   <div class="col-lg-4 col-md-6 col-sm-12 mb-3 mb-md-0 mb-lg-0">
-                                    <div class="pb-4 pt-1 border">
-                                        <div class="product font-rale">
-                                            <a href="#">
-                                                <img src="{{asset($timer_product->photo)}}" alt="{{$timer_product->title}}" class="img-fluid">
-                                                <h6 class="text-center">{{$timer_product->title}}</h6>
-                                            </a>
-                                            <div class="text-center">
-                                                <div class="rating text-warning font-size-12">
-                                                    <span><i class="fas fa-star"></i></span>
-                                                    <span><i class="fas fa-star"></i></span>
-                                                    <span><i class="fas fa-star"></i></span>
-                                                    <span><i class="fas fa-star"></i></span>
-                                                    <span><i class="far fa-star"></i></span>
-                                                </div>
-                                                <div class="price py-2">
-                                                    <span class="text-danger regular-price">{{$timer_product->price-$timer_product->discount}}</span> <span class="dis-price" style="text-decoration: line-through">{{$timer_product->price}}</span>
-                                                </div>
-                                                <button type="submit" class="btn btn-sm btn-warning font-size-12"><i class="fa-solid fa-cart-shopping"></i> Add Cart</button>
+                                        <div class="col-lg-4 col-md-6 col-sm-12 mb-3 mb-md-0 mb-lg-0" id="timer_product_div{{$timer_product->id}}">
+                                            <div class="pb-4 pt-1 border">
+                                                <div class="product font-rale">
+                                                    <a href="#">
+                                                        <img src="{{asset($timer_product->photo)}}" alt="{{$timer_product->title}}" class="img-fluid">
+                                                        <h6 class="text-center">{{$timer_product->title}}</h6>
+                                                    </a>
+                                                    <div class="text-center">
+                                                        <div class="rating text-warning font-size-12">
+                                                            <span><i class="fas fa-star"></i></span>
+                                                            <span><i class="fas fa-star"></i></span>
+                                                            <span><i class="fas fa-star"></i></span>
+                                                            <span><i class="fas fa-star"></i></span>
+                                                            <span><i class="far fa-star"></i></span>
+                                                        </div>
+                                                        <div class="price py-2">
+                                                            <span class="text-danger regular-price">{{$timer_product->price-$timer_product->discount}}</span> <span class="dis-price" style="text-decoration: line-through">{{$timer_product->price}}</span>
+                                                        </div>
+                                                        <button type="submit" class="btn btn-sm btn-warning font-size-12"><i class="fa-solid fa-cart-shopping"></i> Add Cart</button>
 
-                                                <div class="time-countdown-slide">
-                                                    <div class="time-wrapper">
-                                                        <div class="time-label clearfix px-2">
-                                                            <div class="stock-qty">
-                                                                Availability:<span>{{$timer_product->stock}}</span>
-                                                            </div>
+                                                        <div class="time-countdown-slide">
+                                                            <div class="time-wrapper">
+                                                                <div class="time-label clearfix px-2">
+                                                                    <div class="stock-qty">
+                                                                        Availability:<span>{{$timer_product->stock}}</span>
+                                                                    </div>
 
-                                                            <div class="time-left">
-                                                                Time left: <span>{{$timer_product->time_from}}</span>
+                                                                    <div class="time-left">
+                                                                        Time left: <span>{{$timer_product->time_from}}</span>
+                                                                    </div>
+                                                                </div>
+
+                                                                {{-- <div class="time-ranger">
+                                                                    <div class="time-pass" style="width: 49.58904109589%">
+                                                                    </div>
+                                                                </div> --}}
+
+                                                                <div class="deals-countdown">
+                                                                    <div class="deals-time time-day">
+                                                                        <div class="num-time" id="day{{$timer_product->id}}"></div>
+                                                                        <div class="title-time">Days</div>
+                                                                    </div>
+                                                                    <div class="deals-time time-hours">
+                                                                        <div class="num-time" id="hour{{$timer_product->id}}"></div>
+                                                                        <div class="title-time">Hrs</div>
+                                                                    </div>
+                                                                    <div class="deals-time time-mins">
+                                                                        <div class="num-time" id="minute{{$timer_product->id}}"></div>
+                                                                        <div class="title-time">Mins</div>
+                                                                    </div>
+                                                                    <div class="deals-time time-secs">
+                                                                        <div class="num-time" id="second{{$timer_product->id}}"></div>
+                                                                        <div class="title-time">Secs</div>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
+                                                       {{-- @dd($timer_product->time_to) --}}
+                                                        <script>
+                                                              var countDownDate = new Date("{{$timer_product->time_to}}").getTime();
 
-                                                        {{-- <div class="time-ranger">
-                                                            <div class="time-pass" style="width: 49.58904109589%">
+                                                                let x = setInterval(function() {
+                                                                    let now = new Date().getTime();
+                                                                    let distance = countDownDate - now;
+
+                                                                    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                                                                    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                                                    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                                                                    console.log(minutes)
+                                                                    let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                                                                    document.getElementById("day{{$timer_product->id}}").innerHTML = days ;
+                                                                    document.getElementById('hour{{$timer_product->id}}').innerText= hours
+                                                                    document.getElementById('minute{{$timer_product->id}}').innerText= minutes
+                                                                    document.getElementById('second{{$timer_product->id}}').innerText= seconds
+
+
+                                                                    if (distance < 0) {
+                                                                        clearInterval(x);
+                                                                        document.getElementById("timer_product_div{{$timer_product->id}}").style.display = "none";
+                                                                    }
+                                                                }, 1000);
+                                                        </script>
+                                                        {{-- <div class="row">
+                                                            <div>
+                                                                <div id="simple-timer"></div>
                                                             </div>
                                                         </div> --}}
 
-                                                        <div class="deals-countdown">
-                                                            <div class="deals-time time-day">
-                                                                <div class="num-time" id="day"></div>
-                                                                <div class="title-time">Days</div>
-                                                            </div>
-                                                            <div class="deals-time time-hours">
-                                                                <div class="num-time" id="hour"></div>
-                                                                <div class="title-time">Hrs</div>
-                                                            </div>
-                                                            <div class="deals-time time-mins">
-                                                                <div class="num-time" id="minute"></div>
-                                                                <div class="title-time">Mins</div>
-                                                            </div>
-                                                            <div class="deals-time time-secs">
-                                                                <div class="num-time" id="second"></div>
-                                                                <div class="title-time">Secs</div>
-                                                            </div>
-                                                        </div>
                                                     </div>
                                                 </div>
-
-                                                <div class="row">
-                                                    <div>
-                                                        <div id="simple-timer"></div>
-                                                    </div>
-                                                </div>
-
                                             </div>
                                         </div>
-                                    </div>
-                                </div>AQq
                                    @endforeach
                                 </div>
 
@@ -637,31 +662,7 @@
 <script>
     $(document).ready(function() {
         DBaddToCart();
-        function countDown(){
-            let countDownDate = new Date("july 2, 2023 12:00:00").getTime();
-            let x = setInterval(function() {
-            let now = new Date().getTime();
-            let distance = countDownDate - now;
 
-            let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            console.log(minutes)
-            let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById("day").innerHTML = days ;
-            document.getElementById('hour').innerText= hours
-            document.getElementById('minute').innerText= minutes
-            document.getElementById('second').innerText= seconds
-
-
-            if (distance < 0) {
-                clearInterval(x);
-                document.getElementById("day").innerHTML = "EXPIRED";
-            }
-            }, 1000);
-        };
-        countDown();
     });
 
 </script>
