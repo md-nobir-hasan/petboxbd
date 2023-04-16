@@ -127,7 +127,15 @@
                                             </select>
                                         </div>
                                     @endif
-
+                                    @if (check('Timmer Product'))
+                                        <div class="form-group">
+                                            <label for="is_timer">Timer Product</label>
+                                            <select name="is_timer" class="form-control">
+                                            <option value="">No</option>
+                                            <option value="true">Yes</option>
+                                            </select>
+                                        </div>
+                                    @endif
                                     <div class="form-group">
                                         <label for="stock">In stock <span class="text-danger">*</span></label>
                                         <input id="quantity" type="number" name="stock" min="0"

@@ -28,6 +28,8 @@ class SiteSettingSeeder extends Seeder
             ['user_id' => 1,'service_id' => 11,'status' => 1], //Database Add To Cart
             // ['user_id' => 1,'service_id' => 12,'status' => 1], //LocalStorage Add To Cart
              ['user_id' => 1,'service_id' => 13,'status' => 1], //Excel
+             ['user_id' => 1,'service_id' => 14,'status' => 1], //Timer Product
+             ['user_id' => 1,'service_id' => 15,'status' => 1], //Timer Product
         ];
 
         DB::table('site_settings')->insert($n);

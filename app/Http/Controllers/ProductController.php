@@ -85,6 +85,10 @@ class ProductController extends Controller
             $insert->condition = $request->condition ?? 'default';
             $insert->stock = $request->stock;
             $insert->status = $request->status;
+            // if($request->time_from){
+                $insert->time_to = $request->time_to;
+                // dd($request->all());
+            // }
             $insert->photo = ProductGallery::orderBy('id','desc')->first()->imageGallery->img;
             $insert->slug = $request->title;
             $insert->is_featured = $request->input('is_featured',0);

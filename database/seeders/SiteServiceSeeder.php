@@ -34,6 +34,7 @@ class SiteServiceSeeder extends Seeder
             ['name' => 'LocalStorage Add To Cart','main_key_id' => 4,'checking' => 4,'status' => 1],
             ['name' => 'Excel','main_key_id' => 2,'checking' => 4,'status' => 1],
             ['name' => 'Wishlist','main_key_id' => 5,'checking' => 1,'status' => 1],
+            ['name' => 'Timer Product','main_key_id' => 1,'checking' => 1,'status' => 1],
         ];
 
         DB::table('services')->insert($n);

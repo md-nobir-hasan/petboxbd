@@ -61,19 +61,17 @@ class FrontendController extends Controller
             $n['banners1'] = DB::table('banners')->orderBy('id', 'ASC')->limit('1')->first();
             $n['banners2'] = DB::table('banners')->orderBy('id', 'DESC')->limit('1')->first();
 
-            // $n['products_default'] = Product::orderBy('id', 'DESC')->limit('6')->get();
+            $n['timer_products'] = Product::orderBy('id', 'DESC')->where('time_to','!=',null)->get();
 
            if(serviceCheck('No Product Type')){
             $n['products'] = Product::orderBy('id', 'DESC')->limit('6')->get();
            }else{
                 if($npc = serviceCheck('New Product')){
-                    $n['new_product'] = Product::whereBetween('created_at', [now()->subDays($npc->service->checking), now()])->orderBy('id', 'DESC')->get();
-                    $n['products'] = Product::WhereNotBetween('created_at', [now()->subDays($npc->service->checking), now()])->orderBy('id', 'DESC')->get();
+                    $n['new_product'] = Product::whereBetween('created_at', [now()->subDays($npc->service->checking), now()])->where('time_to',null)->orderBy('id', 'DESC')->get();
+                    $n['products'] = Product::WhereNotBetween('created_at', [now()->subDays($npc->service->checking), now()])->where('time_to',null)->orderBy('id', 'DESC')->get();
                 }
-
                 if($pc = serviceCheck('Best Selling Product')){
-                    $n['best_selling_prouct'] = Product::withSum('orderItem','qty')->orderBy('order_item_sum_qty','desc')->take($pc->service->checking)->orderBy('id', 'DESC')->get();
-
+                    $n['best_selling_prouct'] = Product::withSum('orderItem','qty')->orderBy('order_item_sum_qty','desc')->take($pc->service->checking)->where('time_to',null)->orderBy('id', 'DESC')->get();
                     if(count($n['best_selling_prouct'])){
                         foreach($n['best_selling_prouct'] as $value){
                             $n['products'] =  $n['products']->where('id','!=',$value->id);
