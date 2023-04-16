@@ -30,6 +30,7 @@ class CreateProductsTable extends Migration
             $table->float('price');
             $table->float('discount')->nullabale();
             $table->boolean('is_featured')->deault(false);
+            $table->date('time_to')->nullable();
             $table->timestamps();
         });
 

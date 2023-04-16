@@ -31,6 +31,7 @@ use App\Http\Controllers\MainKeyController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\SiteSettingController;
+use App\Http\Controllers\WishlishtController;
 use App\Models\Feature;
 
 /*
@@ -63,6 +64,9 @@ Route::get('/product_details/{id}',[FrontendController::class,'product_details']
 
 //Add to Cart
 Route::resource('addtocart',AddToCartController::class);
+
+//Wishlist
+Route::resource('wishlist',WishlishtController::class);
  //end frontend route
 
 

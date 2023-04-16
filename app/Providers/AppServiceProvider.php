@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Models\AddToCart;
 use App\Models\CompanyContact;
 use App\Models\CompanyInfo;
+use App\Models\Wishlist;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Auth;
@@ -46,5 +47,16 @@ class AppServiceProvider extends ServiceProvider
             view()->share('site_info',$site_info);
             view()->share('site_contact_info',$site_contact_info);
        }
+       if(serviceCheck('Wishlist')){
+        if( Schema::hasTable('wishlists')){
+                $wishlists = null;
+                if(Auth::user()){
+                    $wishlists = Wishlist::where('user_id',Auth::user()->id)->get();
+                }else{
+                    $wishlists = Wishlist::where('ip_address',request()->ip())->get();
+                }
+                view()->share('wishlists',$wishlists);
+            }
+    }
     }
 }

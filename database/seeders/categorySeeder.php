@@ -21,5 +21,13 @@ class categorySeeder extends Seeder
         ];
 
         DB::table('categories')->insert($n);
+
+        $na = [
+            ['title' => 'Subcat1','cat_id' =>1],
+            ['title' => 'Subcat2','cat_id' =>1],
+            ['title' => 'Subcat3','cat_id' =>1],
+        ];
+
+        DB::table('subcats')->insert($na);
     }
 }

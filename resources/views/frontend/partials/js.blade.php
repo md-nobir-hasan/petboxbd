@@ -108,21 +108,22 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
+        let url = null;
         // ajax insert
         if (p.action == 'store') {
-            var url = "{{ route('ajax.singlestore') }}";
+             url = "{{ route('ajax.singlestore') }}";
         }
         // ajax show
         if (p.action == 'show') {
-            var url = "{{ route('ajax.index') }}";
+             url = "{{ route('ajax.index') }}";
         }
         // ajax edit
         if (p.action == 'edit') {
-            var url = "{{ route('ajax.edit') }}";
+             url = "{{ route('ajax.edit') }}";
         }
         // ajax delete
         if (p.action == 'delete') {
-            var url = "{{ route('ajax.delete') }}";
+             url = "{{ route('ajax.delete') }}";
         }
 
         var data_object = {
@@ -146,6 +147,7 @@
                 fallFunc(response);
             }
         });
+
     }
     //======================================== End ==================================================
 

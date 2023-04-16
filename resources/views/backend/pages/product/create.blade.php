@@ -123,6 +123,26 @@
                                             </select>
                                         </div>
                                     @endif
+                                    {{-- @dd(check('Timer Product')) --}}
+                                    @if (serviceCheck('Timer Product'))
+                                        <div class="form-group">
+                                            <label for="is_timer">Timer Product</label>
+                                            <select name="is_timer" id="is_timer" class="form-control">
+                                               <option value="no">No</option>
+                                               <option value="yes">Yes</option>
+                                            </select>
+                                        </div>
+                                        <div id="time_to_div" class="form-group" style="display: none">
+                                            <label for="time_to" class="col-form-label">Set Time<span
+                                                    class="text-danger">*</span></label>
+                                            <input id="time_to" type="date" name="time_to" placeholder="Set a date date"
+                                                value="{{ old('time_to') }}" class="form-control">
+                                            @error('time_to')
+                                                <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+
+                                    @endif
                                     <div class="form-group">
                                         <label for="stock">In stock</label>
                                         <input id="quantity" type="number" name="stock" min="0"
@@ -297,6 +317,19 @@
                 height: '150px'
             });
 
+            $('#is_timer').on('change',function () {
+                console.log($(this).val() + ' value i am');
+                if($(this).val() == 'yes'){
+                    $('#time_to_div').css({
+                        display:'block'
+                    });
+                }else{
+                    $('#time_to_div').css({
+                        display:'none'
+                    });
+                }
+
+             });
             $('#cat_id1').on('change',function () {
                 let val = $(this).val();
                 $.ajax({
