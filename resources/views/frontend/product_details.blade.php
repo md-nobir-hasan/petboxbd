@@ -86,6 +86,16 @@
         .attr2.active {
             border: 1px solid orange;
         }
+        .submit-review-div{
+
+        }
+        .submit-review-btn{
+            background: #f2f2f2;
+            border: 1px solid #cdcdcd;
+            color: #333;
+            border-radius: 4px;
+
+        }
 
         @media (max-width: 426px) {
             .container {
@@ -230,7 +240,28 @@
                             <span class="text-danger"><i class="fa-solid fa-star"></i></span>
                             <span class="mx-2">Review</span>
                             <span class="">|</span>
-                            <span class="mx-2 rev_text"><a href="">Add Your Review</a></span>
+                            <span class="mx-2 rev_text">
+                               <a href="{{asset('/product_details/2?#contact')}}">
+                                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                    {{-- <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">
+                                            DETAILS
+                                        </button>
+                                    </li> --}}
+                                    {{-- More information option  --}}
+                                    {{-- <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">
+                                            MORE INFORMATION
+                                        </button>
+                                    </li> --}}
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">
+                                            REVIEWS
+                                        </button>
+                                    </li>
+                                </ul>
+                               </a>
+                            </span>
                         </div>
                         <div class="price price_box mb-1">
 
@@ -395,6 +426,11 @@
                                                 <label for="inputPassword" class="col-sm-3 col-form-label">Review <span class="text-danger">*</span></label>
                                                 <div class="col-sm-9">
                                                     <input type="password" class="form-control" id="inputPassword">
+                                                </div>
+                                            </div>
+                                            <div class="mb-3 row">
+                                                <div class="col-sm-9 sub-review-div pt-5 text-center">
+                                                    <button class="submit-review-btn px-3 py-2">Submit Review</button>
                                                 </div>
                                             </div>
                                         </form>

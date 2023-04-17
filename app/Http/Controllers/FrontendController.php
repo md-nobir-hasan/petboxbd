@@ -61,7 +61,7 @@ class FrontendController extends Controller
             $n['banners1'] = DB::table('banners')->orderBy('id', 'ASC')->limit('1')->first();
             $n['banners2'] = DB::table('banners')->orderBy('id', 'DESC')->limit('1')->first();
 
-            $n['timer_products'] = Product::orderBy('id', 'DESC')->where('time_to','!=',null)->get();
+            $n['timer_products'] = Product::orderBy('id', 'DESC')->where('time_to','!=',null)->limit('1')->get();
 
            if(serviceCheck('No Product Type')){
             $n['products'] = Product::orderBy('id', 'DESC')->limit('6')->get();
