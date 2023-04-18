@@ -141,8 +141,13 @@ class OrderController extends Controller
                     $order_item = new OrderItem();
                     $order_item->order_id = $insert->id;
                     $order_item->product_id = $order['product_id'];
-                    $order_item->p_size_id = $order['p_size_id'];
-                    $order_item->p_color_id = $order['p_color_id'];
+                    if(isset($order['p_size_id'])){
+                        $order_item->p_size_id = $order['p_size_id'];
+                    }
+                    if(isset($order['p_color_id'])){
+                        $order_item->p_color_id = $order['p_color_id'];
+                    }
+
                     $order_item->qty = $order['qty'];
                     $order_item->price = $order['price'];
                     $order_item->save();
@@ -337,8 +342,8 @@ class OrderController extends Controller
         // return $order;
         $file_name=$order->order_number.'-'.$order->first_name.'.pdf';
         // return $file_name;
-        $pdf=PDF::loadview('backend.order.pdf',compact('order'));
-        return $pdf->download($file_name);
+        // $pdf=PDF::loadview('backend.order.pdf',compact('order'));
+        // return $pdf->download($file_name);
     }
     // Income chart
     public function incomeChart(Request $request){

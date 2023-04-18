@@ -30,7 +30,7 @@
     }
     #side_navbar .link-active{
         border: 3px solid #94baf3;
-        background: #1a75dc94
+        background: #9edc1a94
     }
 
 </style>
@@ -183,22 +183,21 @@
               </div>
             </div>
 
-            <div class="ps-3  py-2 link-div">
-                <a  class="text-decoration-none link {{Request::is("contact") ? 'link-active': '' }}" href="">Contact</a>
-            </div>
-            <div class="ps-3 py-2 link-div">
-                <a class="text-decoration-none link {{Request::is("privacy-policy") ? 'link-active': '' }}" href="">Privacy Policy</a>
-            </div>
-            {{-- <div class="ps-3 py-2 link-div"> --}}
+            {{-- Pages  --}}
+            @foreach ($pages as $page)
+                <div class="ps-3  py-2 link-div {{Request::is("pages/$page->title") ? 'link-active': '' }}">
+                    <a  class="text-decoration-none link " href="{{route('page',[$page->title])}}">{{$page->title}}</a>
+                </div>
+            @endforeach
+
+            {{-- Login/ registration  --}}
             @if(Auth::user())
-                {{-- @auth --}}
                 <div class="ps-3  py-2 link-div">
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" >
                         @csrf
                        <button class="border-0 bg-transparent">Logout</button>
                     </form>
                 </div>
-                    {{-- @endauth --}}
             @else
                 <div class="ps-3  py-2 link-div">
                     <a  class="text-decoration-none link {{Request::is("Login") ? 'link-active': '' }}" href="{{route('login')}}">Login</a>
@@ -207,7 +206,6 @@
                     <a  class="text-decoration-none link {{Request::is("registration") ? 'link-active': '' }}" href="{{route('register')}}">Registration</a>
                 </div>
             @endif
-            {{-- </div> --}}
 
           </div>
     </nav>
