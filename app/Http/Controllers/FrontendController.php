@@ -15,6 +15,7 @@ use App\Models\OrderStatus;
 use App\Models\Payment;
 use App\Models\Shipping;
 use App\Models\Product;
+use App\Models\Review;
 use App\Models\User as ModelsUser;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
@@ -292,10 +293,24 @@ class FrontendController extends Controller
         $n['data'] = Product::with(['productGallery','productGallery.imageGallery','productGallery.color','productGallery.size','productSize','productSize.size','color','color.color'])->find($id);
         $n['shippings'] = Shipping::all();
         $n['payments'] = Payment::all();
+        $n['reviews'] = Review::with(['user'])->where('product_id',$id)->get();
+
+        
         // related product collection
         $n['related_products'] = Product::where('cat_id',$n['data']->cat_id)->get();
 
         return view('frontend.product_details', $n);
+    }
+
+    public function review(Request $req){
+        $insert = new Review();
+        $insert->product_id = $req->product_id;
+        $insert->user_id = Auth::user()->id;
+        $insert->quality = $req->quality_rating;
+        $insert->price = $req->price_rating;
+        $insert->comment = $req->comment;
+        $insert->save();
+        return back()->with('review','Review added successfully');
     }
 
 }
