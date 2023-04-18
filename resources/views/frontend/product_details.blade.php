@@ -350,9 +350,9 @@
 
                                 @foreach ($reviews as $review)
                                     {{-- <span >Comment</span> --}}
-                                    <h5 class="py-3">Name: {{$review->user->name}}</h5>
+                                    <h5 class="pt-3">Name: {{$review->user->name}}</h5>
 
-                                    <div class="review my-2">
+                                    <div class="review my-2 ms-2">
                                         <span class="me-2">Quality</span>
                                         @if ($review->quality == 1)
                                             <span class="text-danger"><i class="fa-solid fa-star"></i></span>
@@ -391,7 +391,7 @@
                                         @endif
                                         <span class="ms-2">{{$review->comment}}.</span>
                                     </div>
-                                    <div class="review my-2">
+                                    <div class="review my-2 ms-2">
                                         <span class="me-2">Price</span>
                                         @if ($review->price == 1)
                                             <span class="text-danger"><i class="fa-solid fa-star"></i></span>
