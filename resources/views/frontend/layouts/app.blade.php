@@ -3,7 +3,6 @@
     $google_tag = App\Models\GoogleTag::first();
     $pixel_tag = App\Models\PixelTag::first();
 @endphp
-
 <!DOCTYPE html>
 <html dir="ltr" lang="bn">
 
