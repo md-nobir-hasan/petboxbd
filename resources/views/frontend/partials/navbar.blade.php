@@ -1,4 +1,40 @@
-<header style="">
+<header >
+<style>
+    #side_navbar{
+        display: none;
+        width: 360px;
+        background: #ffcc00;
+        height: 100vh;
+        padding-bottom: 20px;
+        padding: 5px;
+        font-size: 17px !important;
+    }
+    #side_navbar button{
+        background: #ffcc00;
+    }
+    #side_navbar .accordion-body{
+        background: #ffcc005e;
+    }
+    #side_navbar .link{
+        color: black;
+    }
+    .accordion-body .link{
+        border: 3px solid #ffcc005e;
+    }
+    #side_navbar .link-div.active{
+        background: #9edc1a94
+    }
+    #side_navbar .link-div:hover{
+        border: 3px solid #94baf3;
+        background: #9edc1a94
+    }
+    #side_navbar .link-active{
+        border: 3px solid #94baf3;
+        background: #1a75dc94
+    }
+
+</style>
+    {{-- Top Navbar  --}}
     <div class="top-navbar" style="background-color: white;">
         <div class="wrapper-container">
             <div class="row">
@@ -32,93 +68,64 @@
         </div>
     </div>
 
+    {{-- This main navbar for desktop  --}}
     <div class="wrapper-container nav_bar d-none d-lg-block" style="background-color: white">
         <nav class="navbar navbar-expand-lg bg-body-tertiary m-0 p-0">
+            {{-- Side logo  --}}
             <a class="navbar-brand logo" href="{{ url('/') }}">
-                <img src="/{{ $site_info->logo }}" alt="" style="">
+                <img src="/{{ $site_info->logo }}" alt="{{ $site_info->title }}">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
 
-            <div class="search search_one d-md-none d-sm-none d-lg-block d-xs-none" style="width: 100%">
+            {{-- Search option  --}}
+            <div class="search search_one" style="width: 100%">
                 <form class="d-flex input-group" role="search" style="width: 100%">
                     <input class="form-control rounded-0" type="search" placeholder="Search entire store here..." aria-label="Search">
                     <button class="btn rounded-0 border-0" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
             </div>
 
-            <div class="d-flex log_reg" >
-                @if(Route::has('login'))
-
-                    @auth
-                        <div class="btn-group">
-                            <button type="button" class="btn login-reg rounded-0 dropdown-toggle text-white" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #ffcc00">
-                                {{--<i class="fa-solid fa-lock"></i>--}} Log out / Profile
-                            </button>
-                            <ul class="dropdown-menu text-center dropdown-menu-end">
-                                <a href="#" class="btn btn-sm rounded-0 login-reg btn-default btn-flat float-right btn btn-info text-white"
-                                   onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                    {{--<i class="fa-solid fa-right-from-bracket"></i>--}} Log out
-                                </a>
-                                <li><hr class="dropdown-divider"></li>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-
-                                <a href="{{ route('login') }}" class="btn btn-sm login-reg btn-primary rounded-0" style="margin-right: 10px;">{{--<i class="fa fa-sign-in"></i>--}}<span> Profile</span></a>
-
-                            </ul>
-                        </div>
-
-                    @else
-                        <div class="d-flex">
-                            <a href="{{ route('login') }}" class="btn login-reg text-white rounded-0" style="margin-right: 10px; background-color: #ffcc00">{{--<i class="fa fa-sign-in"></i>--}}<span> Login</span></a>
-                            <a href="{{ route('register') }}" class="btn login-reg text-white rounded-0" style="background-color: #ffcc00">{{--<i class="fa fa-tag" aria-hidden="true"></i>--}}<span> Register</span></a>
-                        </div>
-                    @endauth
-
-                @endif
+            {{-- Sidenavbar toggler  --}}
+            <div class="side_navbar_toggler" id="side_navbar_toggler">
+                <svg xmlns="http://www.w3.org/2000/svg" class="" style="height: 42px;color:black" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                  </svg>
             </div>
         </nav>
     </div>
 
-    {{-- Another navbar  --}}
-    <nav class="navbar fixed d-lg-none bg-1" id="navbar">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="{{url('/')}}">{{$site_info->title}}</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
-            <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">{{$site_info->title}}</h5>
-              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body bg-1">
-              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                @foreach ($categories as $cat)
-                @if (count($cat->subcats)>0)
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            {{$cat->title}}
-                        </a>
-                        @foreach ($cat->subcats as $subcat)
-                            <ul class="dropdown-menu dropdown-menu-dark ms-3">
-                                <li>
-                                    <a class="dropdown-item" href="{{route('product.subcat',[$cat->id,$subcat->id])}}">{{$subcat->title}}</a>
-                                </li>
-                            </ul>
-                        @endforeach
-                    </li>
-                @endif
-                @endforeach
-              </ul>
-            </div>
-          </div>
-        </div>
-      </nav>
+    {{-- This main navbar for Mobile under 991px  --}}
+    <div class="wrapper-container nav_bar d-lg-none" style="background-color: white">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary m-0 p-0">
 
+            {{-- Sidenavbar toggler  --}}
+            <div class="side_navbar_toggler" id="side_navbar_toggler">
+                <svg xmlns="http://www.w3.org/2000/svg" class="" style="height: 42px;color:black" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </div>
+
+            {{-- Side logo  --}}
+            <a class="navbar-brand logo" href="{{ url('/') }}">
+                <img src="/{{ $site_info->logo }}" alt="{{ $site_info->title }}">
+            </a>
+
+            {{-- Wishlist  --}}
+            @if (serviceCheck('Wishlist'))
+                    {{-- <div class="col"> --}}
+                        <a href="{{route('wishlist.index')}}" class="pt-2 ps-2">
+                            <p class="m-0 text-center text-white py-1 border_right" style="font-size: 13px !important;">
+                                <span class="text-dark">
+                                    <i class="fa-solid fa-heart" style="color: #ff0000;font-size: 25px;"></i>
+                                     <span class="position-absolute top-0">{{ count($wishlists) }}</span>
+                                </span>
+                            </p>
+                        </a>
+                    {{-- </div> --}}
+                @endif
+        </nav>
+    </div>
+
+ {{-- Search option  --}}
     <div class="py-3 d-lg-none border-top border-bottom" style="background-color: #f5f5f5;" style="">
         <div class="wrapper-container">
             <div class="search" style="width: 100%">
@@ -129,6 +136,81 @@
             </div>
         </div>
     </div>
+
+    {{-- Side Navbar  --}}
+    <nav class="fixed" id="side_navbar">
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+
+
+            {{-- Category option  --}}
+            <div class="accordion-item " >
+              <h2 class="accordion-header " id="flush-headingOne">
+                <button class="accordion-button {{Request::is('product/sub-category/*') ? '': 'collapsed' }}  link-div"
+                     @if (Request::is('product/sub-category/*')) aria-expanded="true" @else aria-expanded="false" @endif
+                     type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-controls="flush-collapseOne">
+                  Categories
+                </button>
+              </h2>
+              <div id="flush-collapseOne" class="accordion-collapse collapse {{Request::is('product/sub-category/*') ? 'show': '' }}" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body  p-0">
+                    @foreach ($categories as $cat)
+                        @if (count($cat->subcats)>0)
+                            <div class="accordion accordion-flush" id="accordionFlushExample2">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="flush-headingOne{{$cat->id}}">
+                                        <button class="accordion-button {{Request::is("product/sub-category/$cat->id}/*") ? '': 'collapsed' }} ps-5" style="background: #fed700a8 !important" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne{{$cat->id}}"
+                                            @if (Request::is('product/sub-category/*')) aria-expanded="true" @else aria-expanded="false" @endif
+                                             aria-controls="flush-collapseOne{{$cat->id}}">
+                                            {{$cat->title}}
+                                        </button>
+                                    </h2>
+                                    <div id="flush-collapseOne{{$cat->id}}" class="accordion-collapse collapse {{Request::is("product/sub-category/$cat->id/*") ? 'show': '' }}" aria-labelledby="flush-headingOne{{$cat->id}}" data-bs-parent="#accordionFlushExample2">
+                                        <div class="accordion-body p-0">
+                                            @foreach ($cat->subcats as $subcat)
+                                                {{-- <ul class="dropdown-menu dropdown-menu-dark ms-3">
+                                                    <li> --}}
+                                                        <a class="dropdown-item ps-5 fw-bold pt-3 link {{Request::is("product/sub-category/$cat->id/$subcat->id") ? 'link-active': '' }}" href="{{route('product.subcat',[$cat->id,$subcat->id])}}">{{$subcat->title}}</a>
+                                                    {{-- </li>
+                                                </ul> --}}
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
+                    @endforeach
+                </div>
+              </div>
+            </div>
+
+            <div class="ps-3  py-2 link-div">
+                <a  class="text-decoration-none link {{Request::is("contact") ? 'link-active': '' }}" href="">Contact</a>
+            </div>
+            <div class="ps-3 py-2 link-div">
+                <a class="text-decoration-none link {{Request::is("privacy-policy") ? 'link-active': '' }}" href="">Privacy Policy</a>
+            </div>
+            {{-- <div class="ps-3 py-2 link-div"> --}}
+            @if(Auth::user())
+                {{-- @auth --}}
+                <div class="ps-3  py-2 link-div">
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+                        @csrf
+                       <button class="border-0 bg-transparent">Logout</button>
+                    </form>
+                </div>
+                    {{-- @endauth --}}
+            @else
+                <div class="ps-3  py-2 link-div">
+                    <a  class="text-decoration-none link {{Request::is("Login") ? 'link-active': '' }}" href="{{route('login')}}">Login</a>
+                </div>
+                <div class="ps-3  py-2 link-div">
+                    <a  class="text-decoration-none link {{Request::is("registration") ? 'link-active': '' }}" href="{{route('register')}}">Registration</a>
+                </div>
+            @endif
+            {{-- </div> --}}
+
+          </div>
+    </nav>
  </header>
 
 

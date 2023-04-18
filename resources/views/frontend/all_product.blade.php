@@ -39,7 +39,7 @@
                                             <div class="item col pb-4 pt-1 border m-2">
                                                 <div class="product-div font-rale">
                                                     <a href="{{ route('product_details', [$product->id]) }}">
-                                                        <img class="img-fluid img{{ $product->id }}" src='{{ asset("$product->photo") }}' alt="{{ $product->title }}" title="{{ $product->title }}">
+                                                        <img class="img-fluid img{{ $product->id }}" src='{{ asset($product->photo) }}' alt="{{ $product->title }}" title="{{ $product->title }}">
                                                         <h6 class="text-center title{{ $product->id }}">{{ $product->title }}</h6>
                                                     </a>
                                                     <div class="text-center">

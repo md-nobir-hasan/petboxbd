@@ -23,9 +23,9 @@ class categorySeeder extends Seeder
         DB::table('categories')->insert($n);
 
         $na = [
-            ['title' => 'Subcat1','cat_id' =>1],
-            ['title' => 'Subcat2','cat_id' =>1],
-            ['title' => 'Subcat3','cat_id' =>1],
+            ['title' => 'Subcat1','cat_id' =>1,'status'=>'active'],
+            ['title' => 'Subcat2','cat_id' =>1,'status'=>'active'],
+            ['title' => 'Subcat3','cat_id' =>1,'status'=>'active'],
         ];
 
         DB::table('subcats')->insert($na);
