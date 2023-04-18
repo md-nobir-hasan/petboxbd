@@ -24,6 +24,7 @@ use App\Http\Controllers\AjaxController;
 use App\Http\Controllers\FeatureController;
 use App\Http\Controllers\ImageGalleryController;
 use App\Http\Controllers\MainKeyController;
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\SiteSettingController;
@@ -59,6 +60,8 @@ Route::get('/product_details/{id}',[FrontendController::class,'product_details']
 Route::get('/product_details/{id}/#contact',[FrontendController::class,'product_details'])->name('product_details');
 Route::post('/review',[FrontendController::class,'review'])->name('review');
 
+//Pages
+Route::get('/pages/{title}',[FrontendController::class,'page'])->name('page');
 //Add to Cart
 Route::resource('addtocart',AddToCartController::class);
 
@@ -260,6 +263,8 @@ Route::group(['middleware'=>['auth']],function() {
         Route::get('/destroy/{id}', [GoogleTagController::class, 'destroy'])->name('destroy');
     });
 
+    //Page
+    Route::resource('/page',PageController::class);
     //Setting
     Route::group(['as' => 'setting.', 'prefix' => 'setting'], function (){
 

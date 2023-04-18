@@ -143,6 +143,39 @@
         </ul>
     </li>
 @endif
+{{-- Page Management  --}}
+@if ($n =check('Page'))
+    <li class="nav-item {{ Request::is('page/*') ? 'menu-open' : '' }}">
+        <a href="#" class="nav-link">
+            <i class="fa-solid fa-truck-fast"></i>
+            <p>
+                Page
+                <i class="fas fa-angle-left right"></i>
+            </p>
+        </a>
+        <ul class="nav nav-treeview">
+            @if ($n->show)
+                <li class="nav-item">
+                    <a href="{{ route('page.index') }}"
+                        class="nav-link {{ Request::is('page/index') ? 'active' : '' }}">
+                        <i class="nav-icon far fa-circle"></i>
+                        <p>Show Page</p>
+                    </a>
+                </li>
+            @endif
+            @if ($n->add)
+                <li class="nav-item">
+                    <a href="{{ route('page.create') }}"
+                        class="nav-link {{ Request::is('page/create') ? 'active' : '' }}">
+                        <i class="nav-icon far fa-circle"></i>
+                        <p>Add Page</p>
+                    </a>
+                </li>
+            @endif
+
+        </ul>
+    </li>
+@endif
 
 {{-- Brand  Management  --}}
 @if ($n =check('Brand'))

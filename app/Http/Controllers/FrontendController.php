@@ -12,6 +12,7 @@ use App\Models\CompanyContact;
 use App\Models\Order;
 use App\Models\OrderItem;
 use App\Models\OrderStatus;
+use App\Models\Page;
 use App\Models\Payment;
 use App\Models\Shipping;
 use App\Models\Product;
@@ -313,6 +314,11 @@ class FrontendController extends Controller
         $insert->comment = $req->comment;
         $insert->save();
         return back()->with('review','Review added successfully');
+    }
+
+    public function page($title){
+        $n['page'] = Page::where('title',$title)->first();
+        return view('frontend.page',$n);
     }
 
 }

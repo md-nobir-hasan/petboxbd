@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\CompanyContact;
 use App\Models\CompanyInfo;
 use App\Models\GoogleTag;
+use App\Models\Page;
 use App\Models\PixelTag;
 use App\Models\Wishlist;
 use Illuminate\Support\ServiceProvider;
@@ -50,10 +51,10 @@ class AppServiceProvider extends ServiceProvider
             view()->share('site_info',$site_info);
             view()->share('site_contact_info',$site_contact_info);
 
-            // $n['categories'] = Category::with('subcats')->get();
+            $n['pages'] = Page::all();
             // $n['google_tag'] = GoogleTag::first();
             // $n['pixel_tag'] = PixelTag::first();
-            // view()->share($n);
+            view()->share($n);
        }
        if(serviceCheck('Wishlist')){
         if( Schema::hasTable('wishlists')){
