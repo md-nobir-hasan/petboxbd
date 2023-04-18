@@ -19,11 +19,19 @@ class WishlishtController extends Controller
     public function index()
     {
         if(Auth::user()){
-            $n['wishlists'] = Wishlist::where('user_id',Auth::user()->id)->get();
+            $n['wishlists'] = Wishlist::with(['product'])->where('user_id',Auth::user()->id)->get();
         }else{
-            $n['wishlists'] = Wishlist::where('ip_address',request()->ip())->get();
+            $n['wishlists'] = Wishlist::with(['product'])->where('ip_address',request()->ip())->get();
         }
         $n['payments'] = Payment::all();
+        // if($id){
+        //     $n['products'] = Product::where('cat_id',$id)->get();
+            $n['name'] = 'Your Wishlist';
+        //     // $n['categories'] = Category::all();
+        //     $n['sliders'] = Slider::all();
+
+            // return view('frontend.all_product',$n);
+        // }
         return view('frontend.wishlist',$n);
     }
 

@@ -112,14 +112,14 @@
             {{-- Wishlist  --}}
             @if (serviceCheck('Wishlist'))
                     {{-- <div class="col"> --}}
-                        <p class="m-0 text-center text-white py-1 border_right" style="font-size: 13px !important;">
-                            <a href="{{route('wishlist.index')}}">
+                        <a href="{{route('wishlist.index')}}" class="pt-2 ps-2">
+                            <p class="m-0 text-center text-white py-1 border_right" style="font-size: 13px !important;">
                                 <span class="text-dark">
                                     <i class="fa-solid fa-heart" style="color: #ff0000;font-size: 25px;"></i>
                                      <span class="position-absolute top-0">{{ count($wishlists) }}</span>
                                 </span>
-                            </a>
-                        </p>
+                            </p>
+                        </a>
                     {{-- </div> --}}
                 @endif
         </nav>
