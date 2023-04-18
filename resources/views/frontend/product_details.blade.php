@@ -240,11 +240,44 @@
                     <div class="col-lg-7 product_dright pt-5 pt-lg-0" style="border:0px solid #808080">
                         <h3 class="pb-2">{{ $data->title }}</h3>
                         <div class="review my-2">
-                            <span class="text-danger"><i class="fa-solid fa-star"></i></span>
-                            <span class="text-danger"><i class="fa-solid fa-star"></i></span>
-                            <span class="text-danger"><i class="fa-solid fa-star"></i></span>
-                            <span class="text-danger"><i class="fa-solid fa-star"></i></span>
-                            <span class="text-danger"><i class="fa-solid fa-star"></i></span>
+                            {{-- <div class="review my-2 ms-2"> --}}
+                                {{-- <span class="me-2">Price</span> --}}
+                                @if ($quality_rating == 1)
+                                    <span class="text-danger"><i class="fa-solid fa-star"></i></span>
+                                    <span><i class="far fa-star"></i></span>
+                                    <span><i class="far fa-star"></i></span>
+                                    <span><i class="far fa-star"></i></span>
+                                    <span><i class="far fa-star"></i></span>
+                                @endif
+                                @if ($quality_rating == 2)
+                                    <span class="text-danger"><i class="fa-solid fa-star"></i></span>
+                                    <span class="text-danger"><i class="fa-solid fa-star"></i></span>
+                                    <span><i class="far fa-star"></i></span>
+                                    <span><i class="far fa-star"></i></span>
+                                    <span><i class="far fa-star"></i></span>
+                                @endif
+                                @if ($quality_rating == 3)
+                                    <span class="text-danger"><i class="fa-solid fa-star"></i></span>
+                                    <span class="text-danger"><i class="fa-solid fa-star"></i></span>
+                                    <span class="text-danger"><i class="fa-solid fa-star"></i></span>
+                                    <span><i class="far fa-star"></i></span>
+                                    <span><i class="far fa-star"></i></span>
+                                @endif
+                                @if ($quality_rating == 4)
+                                    <span class="text-danger"><i class="fa-solid fa-star"></i></span>
+                                    <span class="text-danger"><i class="fa-solid fa-star"></i></span>
+                                    <span class="text-danger"><i class="fa-solid fa-star"></i></span>
+                                    <span class="text-danger"><i class="fa-solid fa-star"></i></span>
+                                    <span><i class="far fa-star"></i></span>
+                                @endif
+                                @if ($quality_rating == 5)
+                                    <span class="text-danger"><i class="fa-solid fa-star"></i></span>
+                                    <span class="text-danger"><i class="fa-solid fa-star"></i></span>
+                                    <span class="text-danger"><i class="fa-solid fa-star"></i></span>
+                                    <span class="text-danger"><i class="fa-solid fa-star"></i></span>
+                                    <span class="text-danger"><i class="fa-solid fa-star"></i></span>
+                                @endif
+                            {{-- </div> --}}
                             <span class="mx-2">Review</span>
                             <span class="">|</span>
                             <span class="mx-2 rev_text">
@@ -356,31 +389,31 @@
                                         <span class="me-2">Quality</span>
                                         @if ($review->quality == 1)
                                             <span class="text-danger"><i class="fa-solid fa-star"></i></span>
-                                            <span><i class="fa-solid text-muted fa-star"></i></span>
-                                            <span><i class="fa-solid text-muted fa-star"></i></span>
-                                            <span><i class="fa-solid text-muted fa-star"></i></span>
-                                            <span><i class="fa-solid text-muted fa-star"></i></span>
+                                            <span><i class="far fa-star"></i></span>
+                                            <span><i class="far fa-star"></i></span>
+                                            <span><i class="far fa-star"></i></span>
+                                            <span><i class="far fa-star"></i></span>
                                         @endif
                                         @if ($review->quality == 2)
                                             <span class="text-danger"><i class="fa-solid fa-star"></i></span>
                                             <span class="text-danger"><i class="fa-solid fa-star"></i></span>
-                                            <span><i class="fa-solid text-muted fa-star"></i></span>
-                                            <span><i class="fa-solid text-muted fa-star"></i></span>
-                                            <span><i class="fa-solid text-muted fa-star"></i></span>
+                                            <span><i class="far fa-star"></i></span>
+                                            <span><i class="far fa-star"></i></span>
+                                            <span><i class="far fa-star"></i></span>
                                         @endif
                                         @if ($review->quality == 3)
                                             <span class="text-danger"><i class="fa-solid fa-star"></i></span>
                                             <span class="text-danger"><i class="fa-solid fa-star"></i></span>
                                             <span class="text-danger"><i class="fa-solid fa-star"></i></span>
-                                            <span><i class="fa-solid text-muted fa-star"></i></span>
-                                            <span><i class="fa-solid text-muted fa-star"></i></span>
+                                            <span><i class="far fa-star"></i></span>
+                                            <span><i class="far fa-star"></i></span>
                                         @endif
                                         @if ($review->quality == 4)
                                             <span class="text-danger"><i class="fa-solid fa-star"></i></span>
                                             <span class="text-danger"><i class="fa-solid fa-star"></i></span>
                                             <span class="text-danger"><i class="fa-solid fa-star"></i></span>
                                             <span class="text-danger"><i class="fa-solid fa-star"></i></span>
-                                            <span><i class="fa-solid text-muted fa-star"></i></span>
+                                            <span><i class="far fa-star"></i></span>
                                         @endif
                                         @if ($review->quality == 5)
                                             <span class="text-danger"><i class="fa-solid fa-star"></i></span>
@@ -395,31 +428,31 @@
                                         <span class="me-2">Price</span>
                                         @if ($review->price == 1)
                                             <span class="text-danger"><i class="fa-solid fa-star"></i></span>
-                                            <span><i class="fa-solid text-muted fa-star"></i></span>
-                                            <span><i class="fa-solid text-muted fa-star"></i></span>
-                                            <span><i class="fa-solid text-muted fa-star"></i></span>
-                                            <span><i class="fa-solid text-muted fa-star"></i></span>
+                                            <span><i class="far fa-star"></i></span>
+                                            <span><i class="far fa-star"></i></span>
+                                            <span><i class="far fa-star"></i></span>
+                                            <span><i class="far fa-star"></i></span>
                                         @endif
                                         @if ($review->price == 2)
                                             <span class="text-danger"><i class="fa-solid fa-star"></i></span>
                                             <span class="text-danger"><i class="fa-solid fa-star"></i></span>
-                                            <span><i class="fa-solid text-muted fa-star"></i></span>
-                                            <span><i class="fa-solid text-muted fa-star"></i></span>
-                                            <span><i class="fa-solid text-muted fa-star"></i></span>
+                                            <span><i class="far fa-star"></i></span>
+                                            <span><i class="far fa-star"></i></span>
+                                            <span><i class="far fa-star"></i></span>
                                         @endif
                                         @if ($review->price == 3)
                                             <span class="text-danger"><i class="fa-solid fa-star"></i></span>
                                             <span class="text-danger"><i class="fa-solid fa-star"></i></span>
                                             <span class="text-danger"><i class="fa-solid fa-star"></i></span>
-                                            <span><i class="fa-solid text-muted fa-star"></i></span>
-                                            <span><i class="fa-solid text-muted fa-star"></i></span>
+                                            <span><i class="far fa-star"></i></span>
+                                            <span><i class="far fa-star"></i></span>
                                         @endif
                                         @if ($review->price == 4)
                                             <span class="text-danger"><i class="fa-solid fa-star"></i></span>
                                             <span class="text-danger"><i class="fa-solid fa-star"></i></span>
                                             <span class="text-danger"><i class="fa-solid fa-star"></i></span>
                                             <span class="text-danger"><i class="fa-solid fa-star"></i></span>
-                                            <span><i class="fa-solid text-muted fa-star"></i></span>
+                                            <span><i class="far fa-star"></i></span>
                                         @endif
                                         @if ($review->price == 5)
                                             <span class="text-danger"><i class="fa-solid fa-star"></i></span>

@@ -294,8 +294,10 @@ class FrontendController extends Controller
         $n['shippings'] = Shipping::all();
         $n['payments'] = Payment::all();
         $n['reviews'] = Review::with(['user'])->where('product_id',$id)->get();
+        $n['quality_rating'] = $n['data']->qualityRatting();
+        // dd($n);
 
-        
+
         // related product collection
         $n['related_products'] = Product::where('cat_id',$n['data']->cat_id)->get();
 

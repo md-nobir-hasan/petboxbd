@@ -85,4 +85,19 @@ class Product extends Model
         return $check;
     }
 
+    public function qualityRatting(){
+        $rating = 0;
+        $number = 1;
+      $reviews =  Review::with(['user'])->where('product_id',$this->id)->get();
+        foreach($reviews as $review){
+            $rating += $review->quality;
+            $number += 1;
+        }
+        $ratting = $rating/$number;
+        if($ratting ==0){
+            $ratting = 5;
+        }
+       return ceil($ratting);
+    }
+
 }
