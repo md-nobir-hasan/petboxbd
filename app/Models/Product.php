@@ -74,15 +74,30 @@ class Product extends Model
 
     public function wishlistCheck(){
         $product_id = $this->id;
-        $user_id = Auth::user()->id;
         $ip_address = Request::ip();
         $check = null;
-        if($user_id){
+        if(Auth::user()){
+            $user_id = Auth::user()->id;
            $check =  Wishlist::where('user_id',$user_id)->where('product_id',$product_id)->first();
         }else{
             $check = Wishlist::where('ip_address',$ip_address)->where('product_id',$product_id)->first();
         }
         return $check;
+    }
+
+    public function qualityRatting(){
+        $rating = 0;
+        $number = 1;
+      $reviews =  Review::with(['user'])->where('product_id',$this->id)->get();
+        foreach($reviews as $review){
+            $rating += $review->quality;
+            $number += 1;
+        }
+        $ratting = $rating/$number;
+        if($ratting ==0){
+            $ratting = 5;
+        }
+       return ceil($ratting);
     }
 
 }

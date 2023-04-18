@@ -61,6 +61,8 @@ Route::get('product/fetch/{id}',[FrontendController::class,'productFetch'])->nam
 Route::get('order/thank-you-page/{order}',[OrderController::class,'thanks'])->name('order.thanks');
 Route::get('order/checkout',[OrderController::class,'checkout'])->name('checkout');
 Route::get('/product_details/{id}',[FrontendController::class,'product_details'])->name('product_details');
+Route::get('/product_details/{id}/#contact',[FrontendController::class,'product_details'])->name('product_details');
+Route::post('/review',[FrontendController::class,'review'])->name('review');
 
 //Add to Cart
 Route::resource('addtocart',AddToCartController::class);

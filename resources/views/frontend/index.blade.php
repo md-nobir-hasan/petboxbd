@@ -354,11 +354,44 @@
                                                     </a>
                                                     <div class="text-center">
                                                         <div class="rating text-warning font-size-12">
-                                                            <span><i class="fas fa-star"></i></span>
-                                                            <span><i class="fas fa-star"></i></span>
-                                                            <span><i class="fas fa-star"></i></span>
-                                                            <span><i class="fas fa-star"></i></span>
+                                                            @php
+                                                            $quality_rating = $product->qualityRatting();
+                                                        @endphp
+                                                        @if ($quality_rating == 1)
+                                                            <span class=""><i class="fa-solid fa-star"></i></span>
                                                             <span><i class="far fa-star"></i></span>
+                                                            <span><i class="far fa-star"></i></span>
+                                                            <span><i class="far fa-star"></i></span>
+                                                            <span><i class="far fa-star"></i></span>
+                                                        @endif
+                                                        @if ($quality_rating == 2)
+                                                            <span class=""><i class="fa-solid fa-star"></i></span>
+                                                            <span class=""><i class="fa-solid fa-star"></i></span>
+                                                            <span><i class="far fa-star"></i></span>
+                                                            <span><i class="far fa-star"></i></span>
+                                                            <span><i class="far fa-star"></i></span>
+                                                        @endif
+                                                        @if ($quality_rating == 3)
+                                                            <span class=""><i class="fa-solid fa-star"></i></span>
+                                                            <span class=""><i class="fa-solid fa-star"></i></span>
+                                                            <span class=""><i class="fa-solid fa-star"></i></span>
+                                                            <span><i class="far fa-star"></i></span>
+                                                            <span><i class="far fa-star"></i></span>
+                                                        @endif
+                                                        @if ($quality_rating == 4)
+                                                            <span class=""><i class="fa-solid fa-star"></i></span>
+                                                            <span class=""><i class="fa-solid fa-star"></i></span>
+                                                            <span class=""><i class="fa-solid fa-star"></i></span>
+                                                            <span class=""><i class="fa-solid fa-star"></i></span>
+                                                            <span><i class="far fa-star"></i></span>
+                                                        @endif
+                                                        @if ($quality_rating == 5)
+                                                            <span class=""><i class="fa-solid fa-star"></i></span>
+                                                            <span class=""><i class="fa-solid fa-star"></i></span>
+                                                            <span class=""><i class="fa-solid fa-star"></i></span>
+                                                            <span class=""><i class="fa-solid fa-star"></i></span>
+                                                            <span class=""><i class="fa-solid fa-star"></i></span>
+                                                        @endif
                                                         </div>
                                                         <div class="price py-2">
                                                             @if($product->discount == 0.00)
@@ -419,11 +452,44 @@
                                                     </a>
                                                     <div class="text-center">
                                                         <div class="rating text-warning font-size-12">
-                                                            <span><i class="fas fa-star"></i></span>
-                                                            <span><i class="fas fa-star"></i></span>
-                                                            <span><i class="fas fa-star"></i></span>
-                                                            <span><i class="fas fa-star"></i></span>
-                                                            <span><i class="far fa-star"></i></span>
+                                                            @php
+                                                                $quality_rating = $product->qualityRatting();
+                                                            @endphp
+                                                            @if ($quality_rating == 1)
+                                                                <span class=""><i class="fa-solid fa-star"></i></span>
+                                                                <span><i class="far fa-star"></i></span>
+                                                                <span><i class="far fa-star"></i></span>
+                                                                <span><i class="far fa-star"></i></span>
+                                                                <span><i class="far fa-star"></i></span>
+                                                            @endif
+                                                            @if ($quality_rating == 2)
+                                                                <span class=""><i class="fa-solid fa-star"></i></span>
+                                                                <span class=""><i class="fa-solid fa-star"></i></span>
+                                                                <span><i class="far fa-star"></i></span>
+                                                                <span><i class="far fa-star"></i></span>
+                                                                <span><i class="far fa-star"></i></span>
+                                                            @endif
+                                                            @if ($quality_rating == 3)
+                                                                <span class=""><i class="fa-solid fa-star"></i></span>
+                                                                <span class=""><i class="fa-solid fa-star"></i></span>
+                                                                <span class=""><i class="fa-solid fa-star"></i></span>
+                                                                <span><i class="far fa-star"></i></span>
+                                                                <span><i class="far fa-star"></i></span>
+                                                            @endif
+                                                            @if ($quality_rating == 4)
+                                                                <span class=""><i class="fa-solid fa-star"></i></span>
+                                                                <span class=""><i class="fa-solid fa-star"></i></span>
+                                                                <span class=""><i class="fa-solid fa-star"></i></span>
+                                                                <span class=""><i class="fa-solid fa-star"></i></span>
+                                                                <span><i class="far fa-star"></i></span>
+                                                            @endif
+                                                            @if ($quality_rating == 5)
+                                                                <span class=""><i class="fa-solid fa-star"></i></span>
+                                                                <span class=""><i class="fa-solid fa-star"></i></span>
+                                                                <span class=""><i class="fa-solid fa-star"></i></span>
+                                                                <span class=""><i class="fa-solid fa-star"></i></span>
+                                                                <span class=""><i class="fa-solid fa-star"></i></span>
+                                                            @endif
                                                         </div>
                                                         <div class="price py-2">
                                                             @if($product->discount == 0.00)
@@ -481,13 +547,47 @@
                                                         <img class="img-fluid img{{ $product->id }}" src='{{ asset("$product->photo") }}' alt="{{ $product->title }}" title="{{ $product->title }}">
                                                         <h6 class="text-center title{{ $product->id }}">{{ $product->title }}</h6>
                                                     </a>
+
                                                     <div class="text-center">
                                                         <div class="rating text-warning font-size-12">
-                                                            <span><i class="fas fa-star"></i></span>
-                                                            <span><i class="fas fa-star"></i></span>
-                                                            <span><i class="fas fa-star"></i></span>
-                                                            <span><i class="fas fa-star"></i></span>
-                                                            <span><i class="far fa-star"></i></span>
+                                                            @php
+                                                                $quality_rating = $product->qualityRatting();
+                                                            @endphp
+                                                            @if ($quality_rating == 1)
+                                                                <span class=""><i class="fa-solid fa-star"></i></span>
+                                                                <span><i class="far fa-star"></i></span>
+                                                                <span><i class="far fa-star"></i></span>
+                                                                <span><i class="far fa-star"></i></span>
+                                                                <span><i class="far fa-star"></i></span>
+                                                            @endif
+                                                            @if ($quality_rating == 2)
+                                                                <span class=""><i class="fa-solid fa-star"></i></span>
+                                                                <span class=""><i class="fa-solid fa-star"></i></span>
+                                                                <span><i class="far fa-star"></i></span>
+                                                                <span><i class="far fa-star"></i></span>
+                                                                <span><i class="far fa-star"></i></span>
+                                                            @endif
+                                                            @if ($quality_rating == 3)
+                                                                <span class=""><i class="fa-solid fa-star"></i></span>
+                                                                <span class=""><i class="fa-solid fa-star"></i></span>
+                                                                <span class=""><i class="fa-solid fa-star"></i></span>
+                                                                <span><i class="far fa-star"></i></span>
+                                                                <span><i class="far fa-star"></i></span>
+                                                            @endif
+                                                            @if ($quality_rating == 4)
+                                                                <span class=""><i class="fa-solid fa-star"></i></span>
+                                                                <span class=""><i class="fa-solid fa-star"></i></span>
+                                                                <span class=""><i class="fa-solid fa-star"></i></span>
+                                                                <span class=""><i class="fa-solid fa-star"></i></span>
+                                                                <span><i class="far fa-star"></i></span>
+                                                            @endif
+                                                            @if ($quality_rating == 5)
+                                                                <span class=""><i class="fa-solid fa-star"></i></span>
+                                                                <span class=""><i class="fa-solid fa-star"></i></span>
+                                                                <span class=""><i class="fa-solid fa-star"></i></span>
+                                                                <span class=""><i class="fa-solid fa-star"></i></span>
+                                                                <span class=""><i class="fa-solid fa-star"></i></span>
+                                                            @endif
                                                         </div>
                                                         <div class="price py-2">
                                                             @if($product->discount == 0.00)
@@ -542,11 +642,44 @@
                                                     </a>
                                                     <div class="text-center">
                                                         <div class="rating text-warning font-size-12">
-                                                            <span><i class="fas fa-star"></i></span>
-                                                            <span><i class="fas fa-star"></i></span>
-                                                            <span><i class="fas fa-star"></i></span>
-                                                            <span><i class="fas fa-star"></i></span>
+                                                            @php
+                                                            $quality_rating = $product->qualityRatting();
+                                                        @endphp
+                                                        @if ($quality_rating == 1)
+                                                            <span class=""><i class="fa-solid fa-star"></i></span>
                                                             <span><i class="far fa-star"></i></span>
+                                                            <span><i class="far fa-star"></i></span>
+                                                            <span><i class="far fa-star"></i></span>
+                                                            <span><i class="far fa-star"></i></span>
+                                                        @endif
+                                                        @if ($quality_rating == 2)
+                                                            <span class=""><i class="fa-solid fa-star"></i></span>
+                                                            <span class=""><i class="fa-solid fa-star"></i></span>
+                                                            <span><i class="far fa-star"></i></span>
+                                                            <span><i class="far fa-star"></i></span>
+                                                            <span><i class="far fa-star"></i></span>
+                                                        @endif
+                                                        @if ($quality_rating == 3)
+                                                            <span class=""><i class="fa-solid fa-star"></i></span>
+                                                            <span class=""><i class="fa-solid fa-star"></i></span>
+                                                            <span class=""><i class="fa-solid fa-star"></i></span>
+                                                            <span><i class="far fa-star"></i></span>
+                                                            <span><i class="far fa-star"></i></span>
+                                                        @endif
+                                                        @if ($quality_rating == 4)
+                                                            <span class=""><i class="fa-solid fa-star"></i></span>
+                                                            <span class=""><i class="fa-solid fa-star"></i></span>
+                                                            <span class=""><i class="fa-solid fa-star"></i></span>
+                                                            <span class=""><i class="fa-solid fa-star"></i></span>
+                                                            <span><i class="far fa-star"></i></span>
+                                                        @endif
+                                                        @if ($quality_rating == 5)
+                                                            <span class=""><i class="fa-solid fa-star"></i></span>
+                                                            <span class=""><i class="fa-solid fa-star"></i></span>
+                                                            <span class=""><i class="fa-solid fa-star"></i></span>
+                                                            <span class=""><i class="fa-solid fa-star"></i></span>
+                                                            <span class=""><i class="fa-solid fa-star"></i></span>
+                                                        @endif
                                                         </div>
                                                         <div class="price py-2">
                                                             <span class="text-danger regular-price">{{$timer_product->price-$timer_product->discount}}</span> <span class="dis-price" style="text-decoration: line-through">{{$timer_product->price}}</span>
