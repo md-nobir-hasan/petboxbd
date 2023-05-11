@@ -388,7 +388,12 @@ class OrderController extends Controller
     }
 
     public function thanks($id){
-        $n['orders'] = Order::with(['orderItem','shipping','payment'])->find($id);
+        $n['orders'] = Order::with(['orderItem','shipping','payment','user','products','orderItem.product'])
+                            ->withSum('orderItem as pqty','qty')
+                            ->withSum('products as pp','price')
+                            ->withSum('products as pd','discount')
+                            ->find($id);
+                            // dd($n);
         return view('frontend.thanks',$n);
     }
 

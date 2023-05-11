@@ -1,0 +1,795 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.fff1{
+    font-family: 'Alkalami', serif;
+    font-family: 'Comme', sans-serif;
+}
+
+.ff-01{
+    font-family: 'Alkalami', serif;
+font-family: 'Comme', sans-serif;
+font-family: 'Lato', sans-serif;
+}
+
+
+
+.main-head{
+    margin-top: 60px;
+}
+
+.head{
+    border: 1px solid #37376b;
+    background: #40408a;
+    width: 90%;
+    height: 14px;
+    margin: auto;
+}
+
+.main-petbox {
+    width: 85%;
+    margin: auto;
+}
+
+.petbox{
+    width: 90%;
+    margin: 25px auto;
+}
+
+.box1{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.box-child1{
+    display: flex;
+}
+
+.box-child1 img{
+    width: 157px;
+}
+
+.child2{
+    margin-left: 5px;
+}
+
+.h1{
+    font-size: 45px;
+    color: rgb(224,27,132);
+    margin-bottom: 16px;
+    font-weight: bold;
+    letter-spacing: -2px;
+}
+
+.tm-0{
+    font-size: 16px;
+    font-weight: 600;
+    margin: -2px 0;
+
+}
+
+.box-child2{
+    padding: 58px 0;
+}
+
+.h5{
+    color: rgb(224,27,132);
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
+.h6{
+    color: rgb(40,53,146);
+    text-align: right;
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: -1px;
+}
+/* -------------------header-section-end------- */
+/* ------------------invoice-section-start------------ */
+
+.invoice-title{
+    padding-left: 19px;
+}
+
+.invoice{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+/* .invoice1{
+    padding-left: 20px;
+} */
+
+.s{
+    color: rgb(40,53,146);
+    font-weight: 600;
+    letter-spacing: -1px;
+    font-size: 28px;
+}
+
+.u{
+    font-size: 18px;
+    margin: 4px 0;
+    color: rgb(224,27,132);
+    font-weight: 600;
+    letter-spacing: -1px;
+}
+
+.m{
+    font-size:25px;
+    color: rgb(67,67,67);
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
+.o{
+    font-size: 18px;
+    text-align: right;
+    color: black;
+    font-weight: 600;
+    letter-spacing: -1px;
+}
+
+/* ------------------invoice-section-end---------- */
+/* -------------------payment-section-start--------- */
+
+.payment{
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    /* margin-left: 19px; */
+}
+
+.pay{
+    font-size: 23px;
+    color: rgb(67,67,67);
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
+.payment0{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.payment1{
+    display: flex;
+    justify-content: space-between;
+    /* width: 50%; */
+}
+.payment6{
+    width: 360px;
+}
+.payment5{
+    width:378px;
+}
+.payment4{
+    width: 545px;
+}
+.su-01{
+    display: block;
+}
+
+.pay1{
+    font-size: 19px;
+    font-family: sans-serif;
+}
+
+.pay2{
+    font-size: 19px;
+}
+
+.n{
+    font-size: 25px;
+    color: rgb(224,27,132);
+    font-weight: 600;
+    letter-spacing: -1px;
+}
+
+.table-head{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.m-0{
+    background: rgb(245, 227, 227);
+}
+
+.m0{
+    padding: 12px 0px;
+}
+
+.head2{
+    font-size: 25px;
+    color: rgb(51, 51, 123);
+
+}
+
+.head3{
+    display:flex;
+    justify-content: space-evenly;
+
+}
+
+.table-title{
+    border-top: 2px solid rgb(193, 202, 193) ;
+    border-bottom: 2px solid rgb(193, 202, 193);
+    margin: 20px 0;
+}
+
+.table-head{
+    margin-top: 17px;
+}
+
+.h{
+    font-size: 25px;
+    color: rgb(42,57,144);
+    font-weight: 600;
+    letter-spacing: -1px;
+}
+
+.ff0{
+    margin-right: 96px;
+}
+
+.ff1{
+    margin-right: 93px;
+}
+
+.head0{
+    display:flex;
+}
+
+.fg0{
+    margin-right:160px;
+}
+
+.tm{
+    font-size: 21px;
+
+}
+
+span{
+    font-size: 17px;
+}
+
+/* ---------------bill-secition-start------- */
+
+.bill{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+}
+
+.subtotal{
+    display: flex;
+    justify-content: space-between;
+}
+
+.subtotal h1{
+    margin-bottom: 20px;
+}
+
+.notes{
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.charge{
+    margin-right: 100px;
+    text-align: right;
+}
+
+.m1{
+    color: rgb(51, 51, 123);
+}
+
+.mm1{
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 20px;
+
+}
+
+.m01{
+    font-weight: 600;
+    letter-spacing: -1px;
+    color: rgb(224,27,132);
+    font-size: 25px;
+}
+
+
+.rate{
+    text-align: right;
+}
+.rate a {
+    font-size: 25px;
+    color: rgb(224,27,132);
+    text-decoration:none;
+}
+
+.rate span {
+    font-size: 15px;
+}
+
+/* ---------------------bill-section-end------------ */
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.footer1{
+    text-align:left;
+}
+
+.footer2{
+    text-align: right;
+}
+
+.btn{
+    font-size: 17px;
+    margin-top:5px;
+    font-weight: 600;
+    color: rgb(224,27,132);
+}
+
+.btn0{
+    font-size: 29px;
+    font-weight: 600;
+    color: rgb(224,27,132);
+}
+
+/* ----------------media-quari------ */
+@media only screen and (max-width: 991px)
+{ .box-child1 img {
+    width: 115px;
+}
+.h1{
+    font-size:31px;
+    margin-bottom: 10px;
+}
+.tm-0{
+    font-size: 14px;
+    margin: -3px 0;
+}
+.ff0{
+    margin-right: 60px;
+}
+.ff1{
+    margin-right: 58px;
+}
+.box-child2 {
+    padding: 40px 0;
+}
+.h5{
+    font-size: 19px;
+}
+.h6{
+    font-size: 19px;
+}
+.s{
+    font-size: 27px;
+}
+.u{
+    font-size: 14px;
+}
+.m{
+    font-size: 21px;
+}
+.pay{
+    font-size: 21px;
+}
+.pay1{
+    font-size: 15px;
+}
+.payment6{
+    width: 308px;
+}
+.payment5{
+    width: 323px;
+}
+.payment4{
+    width: 450px;
+}
+.pay-0{
+    padding-right: 29px;
+}
+
+span{
+    font-size: 16px;
+}
+.h{
+font-size: 22px;
+}
+.tm{
+font-size: 20px;
+}
+.fg0{
+margin-right: 107px;
+}
+.m0{
+padding: 11px 0;
+}
+.mm1 {
+    margin-bottom: 17px;
+    font-weight: 600;
+    font-size: 18px;
+}
+.m01{
+    font-size: 22px;
+}
+.charge{
+margin-right: 85px;
+}
+.rate a {
+font-size: 25px;
+}
+.btn0{
+font-size: 23px;
+}
+.btn{
+font-size: 15px;
+}
+.footer{
+    margin-top: 8px;
+}
+
+}
+
+@media only screen and (max-width: 767px)
+{.box-child1 img {
+    width: 95px;
+}
+.main-head {
+    margin-top: 45px;
+}
+.main-petbox {
+    width: 95%;
+    margin: auto;
+}
+.h1{
+    font-size:27px;
+}
+.tm-0{
+    font-size: 12px;
+    margin: -5px 0;
+}
+.box-child2 {
+    padding: 35px 0;
+}
+.h5{
+    font-size: 15px;
+}
+.h6{
+    font-size: 15px;
+}
+.s{
+    font-size: 22px;
+}
+.u{
+    font-size: 13px;
+}
+.m{
+    font-size: 19px;
+}
+.pay{
+    font-size: 17px;
+}
+.pay1{
+    font-size: 14px;
+}
+.payment4{
+    width: 347px;
+}
+.pay-0{
+    padding-right: 29px;
+}
+.payment5{
+    width: 257px;
+}
+.payment6{
+    width: 244px;
+}
+span{
+    font-size: 12px;
+}
+.h{
+font-size: 17px;
+}
+.tm{
+font-size: 15px;
+}
+.fg0 {
+    margin-right: 94px;
+}
+.notes {
+    font-weight: 600;
+    font-size: 17px;
+}
+.m0{
+padding: 8px 0;
+}
+.mm1 {
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 16px;
+}
+.rate span {
+    font-size: 13px;
+}
+.m01{
+    font-size: 19px;
+}
+.charge{
+margin-right: 50px;
+}
+
+.btn0{
+font-size: 18px;
+}
+.btn{
+font-size: 12px;
+}
+
+}
+
+@media only screen and (max-width: 540px)
+{.box-child1 img {
+    width: 94px;
+}
+.main-head {
+    margin-top: 35px;
+}
+.head{
+    border: 1px solid #37376b;
+    background: #40408a;
+    width: 100%;
+    height: 14px;
+    margin: auto;
+}
+.main-petbox {
+    width: 100%;
+    margin: auto;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+.child2{
+    margin-left: 1px;
+}
+.h1{
+    font-size:25px;
+}
+.tm-0{
+    font-size: 12px;
+    margin: -5px 0;
+}
+.box-child2 {
+    padding: 35px 0;
+}
+.h5{
+    font-size: 14px;
+}
+.h6{
+    font-size: 14px;
+}
+.s{
+    font-size: 21px;
+}
+.u{
+    font-size: 13px;
+}
+.m{
+    font-size: 18px;
+}
+.pay{
+    font-size: 17px;
+}
+.pay1{
+    font-size: 13px;
+}
+.payment4{
+    width: 325px;
+}
+.pay-0{
+    padding-right: 29px;
+}
+.payment5{
+    width: 231px;
+}
+.payment6{
+    width: 218px;
+}
+span{
+    font-size: 12px;
+}
+.h{
+font-size: 17px;
+}
+.tm{
+font-size: 15px;
+}
+.fg0 {
+    margin-right: 94px;
+}
+.notes {
+    font-size: 17px;
+}
+.m0{
+padding: 8px 0;
+}
+.mm1 {
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 16px;
+}
+.rate span {
+    font-size: 13px;
+}
+.m01{
+    font-size: 19px;
+}
+.charge{
+margin-right: 50px;
+}
+
+.btn0{
+font-size: 18px;
+}
+.btn{
+font-size: 12px;
+}
+
+}
+
+@media only screen and (max-width: 500px){
+    .box-child1 img {
+        width: 80px;
+    }
+    .petbox {
+        width: 99%;
+        margin: 15px auto;
+    }
+    .su1{
+        display: block;
+        font-size: 12px;
+    }
+    .h1{
+        font-size:18px;
+        letter-spacing: normal;
+        margin-bottom:10px;
+    }
+    .tm-0{
+        font-size: 12px;
+        margin: -9px 0;
+    }
+    .box-child2 {
+        padding: 20px 0;
+    }
+    .h5{
+        font-size: 12px;
+        letter-spacing: normal;
+    }
+    .h6{
+        font-size: 12px;
+        letter-spacing: normal;
+    }
+    .s{
+        font-size: 17px;
+    }
+    .u{
+        font-size: 12px;
+    }
+    .m{
+        font-size: 15px;
+        letter-spacing: normal;
+    }
+   .pay{
+        font-size: 16px;
+        letter-spacing: normal;
+   }
+   .pay1{
+        font-size: 12px;
+   }
+   .payment4{
+        width: 249px;
+   }
+   .pay-0{
+        padding-right: 29px;
+   }
+   .payment5{
+        width: 208px;
+   }
+   .payment6{
+        width: 196px;
+   }
+   span{
+        font-size: 12px;
+   }
+   .table-title{
+    margin: 12px 0;
+   }
+   .table-head{
+    margin: 10px;
+   }
+   .h{
+    font-size: 14px;
+   }
+   .tm{
+    font-size: 14px;
+   }
+   .tm span{
+    font-size: 12px;
+   }
+   .ff1 {
+    margin-right: 25px;
+   }
+   .ff0{
+    margin-right: 25px;
+   }
+   .fg0{
+    margin-right: 47px;
+   }
+   .tm-001{
+    margin: 0 23px;
+   }
+   .m0{
+    padding: 7px 0;
+    margin: 0 10px;
+   }
+   .mm1{
+    margin-bottom: 6px;
+    font-size: 13px;
+   }
+   .notes {
+    font-size: 16px;
+   }
+   .m01{
+    font-size: 16px;
+   }
+   .subtotal h1 {
+    margin-bottom: 11px;
+   }
+   .rate span{
+    font-size: 12px;
+   }
+   .charge{
+    margin-right: 22px;
+   }
+   .btn0{
+    font-size: 12px;
+   }
+   .btn{
+    font-size: 12px;
+    justify-content: justify;
+   }
+   .note{
+    font-size: 11px !important;
+    margin-left: 12px !important;
+
+}
+
+}
+
+@media only screen and (max-width: 460px){
+    .btn{
+        font-size: 10px;
+    }
+}
+
+
+.note{
+    font-weight: 500;
+    font-size: 18px;
+    margin-left: 50px;
+
+}
