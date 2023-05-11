@@ -55,7 +55,7 @@
                 <div class="invoice1">
                     <div class="s fff1">Invoice</div>
                     @php
-                    $dat = date_format($orders->created_at,'d-m-Y');
+                        $dat = date_format($orders->created_at,'d-m-Y');
                         $date = \Carbon\Carbon::createFromFormat('d-m-Y', $dat);
                     @endphp
                     <div class="u fff1">{{$date->format('d F Y')}}</div>
@@ -71,8 +71,8 @@
             </div>
             <div class="payment0">
                 <div class="payment1 payment6">
-                    <div class="pay1">Name</div>
-                    <div class="pay2 pay1 pay-0">{{$orders->user->name}}</div>
+                    <div class="pay1">Name: </div>
+                    <div class="pay2 pay1 pay-0 ml39">{{$orders->user->name}}</div>
                 </div>
                 <div class="payment2">
                     <div class="pay1">
@@ -83,8 +83,8 @@
             </div>
             <div class="payment0">
                 <div class="payment1 payment5">
-                    <div class="pay1">Mobile</div>
-                    <div class="pay2 pay1 pay-0">(+88){{$orders->phone}}</div>
+                    <div class="pay1">Mobile: </div>
+                    <div class="pay2 pay1 pay-0 ml31">(+88){{$orders->phone}}</div>
 
                 </div>
                 <div class="payment2">
@@ -93,8 +93,8 @@
             </div>
             <div class="payment0">
                 <div class="payment1 payment4">
-                    <div class="pay1">Address</div>
-                    <div class="pay2 pay1">
+                    <div class="pay1">Address: </div>
+                    <div class="pay2 pay1 ml22">
                         <span>{{$orders->address}}</span>
                         {{-- 60,West Rajabazar,
                         <span class="su1">Sher-E-Bangla Nagar,</span>

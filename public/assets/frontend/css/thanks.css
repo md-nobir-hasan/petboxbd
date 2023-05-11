@@ -14,8 +14,18 @@
 font-family: 'Comme', sans-serif;
 font-family: 'Lato', sans-serif;
 }
-
-
+.ml39{
+    margin-left: 39px !important;
+}
+.ml31{
+    margin-left: 31px !important;
+}
+.ml22{
+    margin-left: 18px !important;
+}
+.ml10{
+    margin-left: 10px !important;
+}
 
 .main-head{
     margin-top: 60px;
@@ -162,7 +172,7 @@ font-family: 'Lato', sans-serif;
 
 .payment1{
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     /* width: 50%; */
 }
 .payment6{
