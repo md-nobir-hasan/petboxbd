@@ -35,7 +35,12 @@ class Order extends Model
 
     public function orderItem()
     {
-        return $this->hasMany(OrderItem::class, 'order_id');
+        return $this->hasMany(OrderItem::class);
+    }
+
+    public function products()
+    {
+        return $this->hasManyThrough(Product::class, OrderItem::class,'order_id', 'id', 'id', 'product_id');
     }
     public function payment()
     {
