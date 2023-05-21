@@ -24,6 +24,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alkalami&family=Comme:wght@200;600;800&family=Lato:ital,wght@1,300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{asset('assets/frontend/css/thanks.css')}}">
+<style>
+    .main-head{
+        padding-right: 10px;
+        text-align: right;
+    }
+</style>
 </head>
 <body>
     <div class="main-head">

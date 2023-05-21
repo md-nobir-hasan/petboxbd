@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AddToCartController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\ContactController;
@@ -9,7 +10,6 @@ use App\Http\Controllers\PixelTagController;
 use App\Http\Controllers\ProductColorController;
 use App\Http\Controllers\ProductSizeController;
 use App\Http\Controllers\SliderController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CompanyDetailsController;
 use App\Http\Controllers\ProductController;
