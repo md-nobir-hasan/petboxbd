@@ -96,32 +96,17 @@
     {{-- This main navbar for Mobile under 991px  --}}
     <div class="wrapper-container nav_bar d-lg-none" style="background-color: white">
         <nav class="navbar navbar-expand-lg bg-body-tertiary m-0 p-0">
-
-            {{-- Sidenavbar toggler  --}}
-            <div class="side_navbar_toggler" id="side_navbar_toggler">
-                <svg xmlns="http://www.w3.org/2000/svg" class="" style="height: 42px;color:black" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                </svg>
-            </div>
-
             {{-- Side logo  --}}
             <a class="navbar-brand logo" href="{{ url('/') }}">
                 <img src="/{{ $site_info->logo }}" alt="{{ $site_info->title }}">
             </a>
 
-            {{-- Wishlist  --}}
-            @if (serviceCheck('Wishlist'))
-                    {{-- <div class="col"> --}}
-                        <a href="{{route('wishlist.index')}}" class="pt-2 ps-2">
-                            <p class="m-0 text-center text-white py-1 border_right" style="font-size: 13px !important;">
-                                <span class="text-dark">
-                                    <i class="fa-solid fa-heart" style="color: #ff0000;font-size: 25px;"></i>
-                                     <span class="position-absolute top-0">{{ count($wishlists) }}</span>
-                                </span>
-                            </p>
-                        </a>
-                    {{-- </div> --}}
-                @endif
+             {{-- Sidenavbar toggler  --}}
+             <div class="side_navbar_toggler" id="side_navbar_toggler">
+                <svg xmlns="http://www.w3.org/2000/svg" class="" style="height: 42px;color:black" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </div>
         </nav>
     </div>
 

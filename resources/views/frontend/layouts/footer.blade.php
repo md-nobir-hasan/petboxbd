@@ -125,7 +125,7 @@
 
 <div class="overlay"></div>
 <div class="footer-bottom-bar">
-    <div class="bottom-bar d-flex flex-wrap justify-content-around">
+    <div class="bottom-bar d-flex flex-wrap justify-content-around align-items-center">
         <a href="#" class="bottom-item offer">
             <div class="bottom-item-icon">
                 <i class="fa fa-bookmark" aria-hidden="true"></i>
@@ -139,6 +139,19 @@
             </div>
             <span class="text">Messenger</span>
         </a>
+          {{-- Wishlist  --}}
+        @if (serviceCheck('Wishlist'))
+            {{-- <div class="col"> --}}
+            <a href="{{route('wishlist.index')}}" class="pb-2">
+                <p class="m-0 text-center text-white" style="font-size: 13px !important;">
+                    <span class="text-dark">
+                        <i class="fa-solid fa-heart" style="color: #ff0000;font-size: 30px;"></i>
+                            <span class="position-absolute" style="top: 5px">{{ count($wishlists) }}</span>
+                    </span>
+                </p>
+            </a>
+            {{-- </div> --}}
+        @endif
         <div class="bottom-item cart mc-toggler" id="cart_mobile">
             <a href="{{ route('checkout') }}">
                 <div class="bottom-item-icon">

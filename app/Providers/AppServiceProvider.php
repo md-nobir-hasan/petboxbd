@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use App\Models\AddToCart;
-use App\Models\Category;
 use App\Models\CompanyContact;
 use App\Models\CompanyInfo;
 use App\Models\GoogleTag;
@@ -66,6 +65,14 @@ class AppServiceProvider extends ServiceProvider
                 }
                 view()->share('wishlists',$wishlists);
             }
-    }
+        }
+
+        if( Schema::hasTable('google_tags')){
+            view()->share('google_tag',GoogleTag::first());
+        }
+        if( Schema::hasTable('pixel_tags')){
+            view()->share('pixel_tag',PixelTag::first());
+        }
+
     }
 }
