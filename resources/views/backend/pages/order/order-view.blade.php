@@ -104,8 +104,6 @@
                                         <td></td>
                                         <td></td>
                                         <td></td>
-                                        <td></td>
-                                        <td></td>
                                         <td>Shipping =</td>
                                         <td>{{ $order->shipping->price }}৳</td>
                                     </tr>
