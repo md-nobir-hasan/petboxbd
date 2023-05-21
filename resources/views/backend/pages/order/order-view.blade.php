@@ -76,28 +76,24 @@
                                         <th>S.N.</th>
                                         <th>Product title</th>
                                         <th>Proudct Price</th>
-                                        <th>Color</th>
-                                        <th>Size</th>
                                         <th>Discount</th>
                                         <th>Quantity</th>
                                         <th>Total Amound</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @php
+                                        $total_dis = 0;
+                                    @endphp
                                     @forelse($order->orderItem as $key => $item)
 
                                         <tr>
                                             <td>{{ $key + 1 }}</td>
                                             <td> {{ $item->product->title }}</td>
                                             <td>{{ $item->product->price }}</td>
-                                            <td>{{ $item->color->color->c_name }} ({{$item->color->price_increase}})tk</td>
-                                            <td>{{ $item->size->size->size }} ({{$item->size->price_increase}})tk</td>
                                             <td>{{ $item->product->discount }}</td>
                                             <td>{{ $item->qty }}</td>
-                                            <td>{{ $item->price }}</td>
-                                            {{-- <td>{{ ($item->qty * ($item->product->price - $item->product->discount)) + ($item->shipping ? $item->shipping->price : 0) }}৳ --}}
-                                            </td>
-                                            </td>
+                                            <td>{{ $item->price - ($total_dis += $item->product->discount *2)}}</td>
                                         </tr>
                                     @empty
                                     @endforelse
@@ -118,10 +114,8 @@
                                         <td></td>
                                         <td></td>
                                         <td></td>
-                                        <td></td>
-                                        <td></td>
                                         <td class="fw-bold h5">Total =</td>
-                                        <td class="fw-bold h5">{{ $order->total }}৳</td>
+                                        <td class="fw-bold h5">{{ $order->total- $total_dis }}৳</td>
                                     </tr>
                                 </tfoot>
                             </table>
