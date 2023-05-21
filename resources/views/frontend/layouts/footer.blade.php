@@ -88,27 +88,28 @@
                     <div class="col-lg-4 work-time_col"> <div class="work-time">
                             <h3 class="title">Working Time</h3>
                             <ul>
-                                <li>Monday
-                                    <p class="time">07:00 - 19:30 PM</p>
-                                </li>
-                                <li>Tuesday
-                                    <p class="time">07:00 - 19:30 PM</p>
-                                </li>
-                                <li>Wednesday
-                                    <p class="time">07:00 - 19:30 PM</p>
-                                </li>
-                                <li>Thursday
-                                    <p class="time">07:00 - 19:30 PM</p>
-                                </li>
-                                <li>Friday
-                                    <p class="time">07:00 - 19:30 PM</p>
-                                </li>
                                 <li>Saturday
-                                    <p class="time">07:00 - 19:30 PM</p>
+                                    <p class="time">10:00 AM - 10:00 PM</p>
                                 </li>
                                 <li>Sunday
-                                    <p class="time">07:00 - 19:30 PM</p>
+                                    <p class="time">10:00 AM - 10:00 PM</p>
                                 </li>
+                                <li>Monday
+                                    <p class="time">10:00 AM - 10:00 PM</p>
+                                </li>
+                                <li>Tuesday
+                                    <p class="time">10:00 AM - 10:00 PM</p>
+                                </li>
+                                <li>Wednesday
+                                    <p class="time">10:00 AM - 10:00 PM</p>
+                                </li>
+                                <li>Thursday
+                                    <p class="time">10:00 AM - 10:00 PM</p>
+                                </li>
+                                <li>Friday
+                                    <p class="time">10:00 AM - 10:00 PM</p>
+                                </li>
+
                             </ul>
                             <h4>Emergency Number</h4>
                             <h2>{{ $site_contact_info->phone }}</h2>
