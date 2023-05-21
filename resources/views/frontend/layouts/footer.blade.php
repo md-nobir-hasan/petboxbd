@@ -106,9 +106,9 @@
                                 <li>Thursday
                                     <p class="time">10:00 AM - 10:00 PM</p>
                                 </li>
-                                <li>Friday
+                                {{-- <li>Friday
                                     <p class="time">10:00 AM - 10:00 PM</p>
-                                </li>
+                                </li> --}}
 
                             </ul>
                             <h4>Emergency Number</h4>
