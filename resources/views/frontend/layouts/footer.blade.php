@@ -107,7 +107,7 @@
                                     <p class="time">10:00 AM - 10:00 PM</p>
                                 </li>
                                 <li>Friday
-                                    <p class="time">10:00 AM - 10:00 PM</p>
+                                    <p class="time" style="padding-right: 88px">OFF DAY</p>
                                 </li>
 
                             </ul>
